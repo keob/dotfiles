@@ -1,0 +1,73 @@
+{
+    "editor.fontSize": 19,
+    "editor.fontFamily": "SF Mono,Monaco,Fira Code,Consolas",
+    "editor.renderWhitespace": "none",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "terminal.integrated.fontFamily": "SF Mono,Consolas",
+    "workbench.activityBar.visible": false,
+    "terminal.integrated.fontSize": 18,
+    "zenMode.centerLayout": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#42a5f5",
+    // file
+    "[html]": {
+        "editor.tabSize": 4
+    },
+    "[css]": {
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[C#]": {
+        "editor.tabSize": 4
+    },
+    "[golang]": {
+        "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "files.eol": "\n",
+    // golang
+    "go.goroot": "C:\\Program Files\\go",
+    "go.gopath": "C:\\go",
+    "go.autocompleteUnimportedPackages": true,
+    "go.gocodePackageLookupMode": "go",
+    "go.gotoSymbol.includeImports": true,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+    "go.docsTool": "gogetdoc",
+    "go.lintTool": "golint",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.defaultFormatter": "ms-vscode.Go"
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": false,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
+    // csharp
+    "csharp.referencesCodeLens.enabled": false,
+    "omnisharp.path": "1.34.6-beta.20",
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.minimap.enabled": false
+}

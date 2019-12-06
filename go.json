@@ -1,0 +1,263 @@
+{
+	"Close": {
+		"prefix": "cl",
+		"body": [
+			"close($0)"
+		]
+	},
+	"Default": {
+		"prefix": "def",
+		"body": [
+			"default:"
+		]
+	},
+	"Append": {
+		"prefix": "a",
+		"body": [
+			"$1 = append($1, $0)"
+		]
+	},
+	"delete": {
+		"prefix": "del",
+		"body": [
+			"delete($1, \"$2\")"
+		]
+	},
+	"Case": {
+		"prefix": "ca",
+		"body": [
+			"case $1:"
+		]
+	},
+	"defer": {
+		"prefix": "d",
+		"body": [
+			"defer $0"
+		]
+	},
+	"defer func": {
+		"prefix": "de",
+		"body": [
+			"defer func() {",
+			"    $0",
+			"}()"
+		]
+	},
+	"if": {
+		"prefix": "ifok",
+		"body": [
+			"if ${1:v}, ok := $2; ok {",
+			"    $0",
+			"}"
+		]
+	},
+	"Bytes": {
+		"prefix": "by",
+		"body": [
+			"[]byte($1)"
+		]
+	},
+	"fmt.Printf": {
+		"prefix": "pf",
+		"body": [
+			"fmt.Printf(\"${1:%#v}\\n\", $0)"
+		]
+	},
+	"fmt.Println": {
+		"prefix": "pl",
+		"body": [
+			"fmt.Println(\"${1:%#v}\\n\", $0)"
+		]
+	},
+	"Sprintf": {
+		"prefix": "fsf",
+		"body": [
+			"fmt.Sprintf(\"$1\", $0)"
+		]
+	},
+	"fmt.Fprintf": {
+		"prefix": "fpf",
+		"body": [
+			"fmt.Fprintf(w, \"${1:%s}\", $0)"
+		]
+	},
+	"log.Printf": {
+		"prefix": "lpf",
+		"body": [
+			"log.Printf(\"${1:%v}\", $0)"
+		]
+	},
+	"log.Fatalf": {
+		"prefix": "lff",
+		"body": [
+			"log.Fatalf(\"error$1: %s\", ${0:err})"
+		]
+	},
+	"Error Wrap": {
+		"prefix": "fef",
+		"body": [
+			"fmt.Errorf(\"$1: %w\", err)"
+		]
+	},
+	"Return Error": {
+		"prefix": "re",
+		"body": [
+			"return err"
+		]
+	},
+	"Return Nil": {
+		"prefix": "rn",
+		"body": [
+			"return nil"
+		]
+	},
+	"Map": {
+		"prefix": "ma",
+		"body": [
+			"map[${1:string}]${0:value}"
+		]
+	},
+	"If Error Oneliner": {
+		"prefix": "ie",
+		"body": [
+			"if err := $1; err != nil {",
+			"    $0",
+			"}"
+		]
+	},
+	"For Range": {
+		"prefix": "fv",
+		"body": [
+			"for _, ${1:v} := range ${2:value} {",
+			"    $0",
+			"}"
+		]
+	},
+	"For Range Chan": {
+		"prefix": "fr",
+		"body": [
+			"for ${1:v} := range ${2:value} {",
+			"  $0",
+			"}"
+		]
+	},
+	"To-do": {
+		"prefix": "todo",
+		"body": [
+			"// TODO: $0"
+		]
+	},
+	"Tag": {
+		"prefix": "tag",
+		"body": [
+			"`$1:\"$2\"`"
+		]
+	},
+	"If Error": {
+		"prefix": "err",
+		"body": [
+			"if err != nil {",
+			"    $0",
+			"}"
+		]
+	},
+	"Function": {
+		"prefix": "f",
+		"body": [
+			"// $1 $2.",
+			"func $1($3) $4 {",
+			"    $0",
+			"}"
+		]
+	},
+	"Function Anonymous": {
+		"prefix": "fa",
+		"body": [
+			"func($1) $2 {",
+			"    $0",
+			"}"
+		]
+	},
+	"Test Function": {
+		"prefix": "test",
+		"body": [
+			"// Test $2.",
+			"func Test$1(t *testing.T) {",
+			"    $0",
+			"}"
+		],
+	},
+	"Test Case": {
+		"prefix": "tr",
+		"body": [
+			"t.Run(\"$1\", func(t *testing.T){",
+			"    $0",
+			"})"
+		]
+	},
+	"Method Point": {
+		"prefix": "m",
+		"body": [
+			"// $3 ${4:implementation}.",
+			"func ($1 *$2) $3($5) $6 {",
+			"    $0",
+			"}"
+		]
+	},
+	"Method": {
+		"prefix": "mm",
+		"body": [
+			"// $3 ${4:implementation}.",
+			"func ($1 $2) $3($5) $6 {",
+			"    $0",
+			"}"
+		]
+	},
+	"Main": {
+		"prefix": "main",
+		"body": [
+			"func main(){",
+			"    $0",
+			"}"
+		]
+	},
+	"Init": {
+		"prefix": "init",
+		"body": [
+			"func init(){",
+			"    $0",
+			"}"
+		]
+	},
+	"Make Chan": {
+		"prefix": "mc",
+		"body": [
+			"make(chan ${0})"
+		]
+	},
+	"Struct": {
+		"prefix": "st",
+		"body": [
+			"// $1 $2.",
+			"type $1 struct {",
+			"    $0",
+			"}"
+		]
+	},
+	"Interface": {
+		"prefix": "ife",
+		"body": [
+			"// $1 $2.",
+			"type $1 interface {",
+			"  $0",
+			"}"
+		]
+	},
+	"Struct Field": {
+		"prefix": "sf",
+		"body": [
+			"// $1 $3.",
+			"${1:Name} ${2:string}"
+		]
+	},
+}

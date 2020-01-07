@@ -1,16 +1,33 @@
 {
-    "editor.fontSize": 19,
-    "editor.fontFamily": "SF Mono,Monaco,Fira Code,Consolas",
-    "editor.renderWhitespace": "none",
+    "editor.fontFamily": "Fira Code,Cascadia Code,Consolas",
+    "editor.fontSize": 17,
     "editor.fontLigatures": true,
+    "editor.renderWhitespace": "selection",
+    "explorer.compactFolders": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "terminal.integrated.fontFamily": "SF Mono,Consolas",
-    "workbench.activityBar.visible": false,
-    "terminal.integrated.fontSize": 18,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.snippetSuggestions": "inline",
+    "files.eol": "\n",
+    "editor.wordWrap": "on",
+    "workbench.tree.renderIndentGuides": "none",
     "zenMode.centerLayout": false,
+    "terminal.integrated.fontFamily": "Cascadia Code PL",
+    "terminal.integrated.fontSize": 17,
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": true,
     "workbench.iconTheme": "material-icon-theme",
-    "material-icon-theme.folders.color": "#42a5f5",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+    // ignore
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "*.pyc": true,
+        "*.pyo": true,
+        "__pycache__": true
+    },
     // file
     "[html]": {
         "editor.tabSize": 4
@@ -25,16 +42,12 @@
     "[typescript]": {
         "editor.tabSize": 2
     },
-    "[C#]": {
-        "editor.tabSize": 4
-    },
-    "[golang]": {
+    "[csharp]": {
         "editor.tabSize": 4
     },
     "[python]": {
         "editor.tabSize": 4
     },
-    "files.eol": "\n",
     // golang
     "go.goroot": "C:\\Program Files\\go",
     "go.gopath": "C:\\go",
@@ -48,7 +61,12 @@
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "[go]": {
-        "editor.defaultFormatter": "ms-vscode.Go"
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.Go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     "go.languageServerExperimentalFeatures": {
         "format": false,
@@ -65,9 +83,33 @@
         "diagnostics": true,
         "documentLink": true
     },
+    "go.coverageDecorator": {
+        "type": "gutter",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockblue",
+        "uncoveredGutterStyle": "slashyellow"
+    },
+    "go.delveConfig": {
+        "dlvLoadConfig": {
+            "followPointers": true,
+            "maxVariableRecurse": 1,
+            "maxStringLen": 120,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        },
+        "apiVersion": 2,
+        "showGlobalVariables": true
+    },
+    // python
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.jediEnabled": false,
+    "python.autoComplete.extraPaths": [],
     // csharp
-    "csharp.referencesCodeLens.enabled": false,
-    "omnisharp.path": "1.34.6-beta.20",
-    "workbench.colorTheme": "Atom One Dark",
-    "editor.minimap.enabled": false
+    "csharp.referencesCodeLens.enabled": false
 }

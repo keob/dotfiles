@@ -20,7 +20,6 @@
             "hidden": false,
             "name": "PowerShell Core",
             "source": "Windows.Terminal.PowershellCore",
-            "commandline": "pwsh-preview.cmd",
             "historySize": 9001,
             "padding": "10",
             "snapOnInput": true,

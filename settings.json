@@ -1,8 +1,12 @@
 {
-    "editor.fontFamily": "Fira Code,Cascadia Code,Consolas",
+    "workbench.sideBar.location": "left",
+    "editor.lineNumbers": "on",
+    "editor.fontFamily": "JetBrains Mono,Fira Code,Cascadia Code,Consolas",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
-    "editor.renderWhitespace": "selection",
+    "editor.rulers": [90, 120],
+	"window.zoomLevel": 0,
+    "editor.renderWhitespace": "boundary",
     "explorer.compactFolders": false,
     "editor.formatOnPaste": true,
     "editor.acceptSuggestionOnEnter": "off",
@@ -11,12 +15,12 @@
     "editor.wordWrap": "on",
     "workbench.tree.renderIndentGuides": "none",
     "zenMode.centerLayout": false,
-    "terminal.integrated.fontFamily": "Cascadia Code PL",
+    "terminal.integrated.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontSize": 17,
     "editor.minimap.enabled": true,
     "breadcrumbs.enabled": true,
     "workbench.iconTheme": "material-icon-theme",
-    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     // ignore
     "files.exclude": {
         "**/.git": true,
@@ -42,11 +46,40 @@
     "[typescript]": {
         "editor.tabSize": 2
     },
-    "[csharp]": {
-        "editor.tabSize": 4
-    },
     "[python]": {
         "editor.tabSize": 4
+    },
+    "[dockerfile]": {
+		"editor.tabSize": 2
+	},
+	"[javascriptreact]": {
+		"editor.tabSize": 2
+	},
+	"[typescriptreact]": {
+		"editor.tabSize": 2
+	},
+	"[vue]": {
+		"editor.tabSize": 2
+	},
+    "[makefile]": {
+	},
+	"[markdown]": {
+		"editor.tabSize": 4
+	},
+    "[c]": {
+		"editor.tabSize": 4
+	},
+	"[cpp]": {
+		"editor.tabSize": 4
+	},
+    "[go]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.Go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     // golang
     "go.goroot": "C:\\Program Files\\go",
@@ -60,14 +93,6 @@
     "go.lintTool": "golint",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-vscode.Go",
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
     "go.languageServerExperimentalFeatures": {
         "format": false,
         "autoComplete": true,
@@ -102,14 +127,14 @@
         "showGlobalVariables": true
     },
     // python
-    "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "yapf",
-    "python.linting.flake8Args": [
-        "--max-line-length=120"
-    ],
-    "python.linting.pylintEnabled": false,
-    "python.jediEnabled": false,
+    "python.linting.enabled": true,
+	"python.linting.lintOnSave": true,
+	"python.linting.maxNumberOfProblems": 50,
+	"python.linting.pylintArgs": ["--errors-only"],
+	"python.linting.pep8Enabled": false,
+	"python.linting.flake8Enabled": false,
+	"python.linting.mypyEnabled": false,
+	"python.linting.pylamaEnabled": false,
+    "python.formatting.formatOnSave": true,
     "python.autoComplete.extraPaths": [],
-    // csharp
-    "csharp.referencesCodeLens.enabled": false
 }

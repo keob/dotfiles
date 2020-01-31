@@ -1,12 +1,10 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
     "editor.lineNumbers": "on",
     "editor.fontFamily": "JetBrains Mono,Fira Code,Cascadia Code,Consolas",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
-    // "editor.rulers": [90, 120],
     "window.zoomLevel": 0,
     "editor.renderWhitespace": "selection",
     "explorer.compactFolders": false,

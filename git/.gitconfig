@@ -2,5 +2,12 @@
 	name = keob
 	email = bugbinbo@outlook.com
 [alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	logg = log --graph --decorate --all
 	dog = log --all --decorate --oneline --graph
-	    tree = log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(black)[%cr]%C(reset)  %x09%C(black)%an: %s %C(reset)'
+	tree = log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(black)[%cr]%C(reset)  %x09%C(black)%an: %s %C(reset)'
+[credential]
+	helper = store

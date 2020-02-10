@@ -70,8 +70,8 @@
         "editor.tabSize": 4,
         "editor.defaultFormatter": "ms-vscode.Go",
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
+            "source.organizeImports": true
+        }
     },
     // golang
     "go.goroot": "C:\\Program Files\\go",

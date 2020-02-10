@@ -1,8 +1,12 @@
 {
+    // basic
+    "editor.links": false,
+    "editor.formatOnSave": false,
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
     "editor.lineNumbers": "on",
-    "editor.fontFamily": "JetBrains Mono,Fira Code,Cascadia Code,Consolas",
+    "workbench.colorTheme": "Default Dark+",
+    "editor.fontFamily": "Fira Code,JetBrains Mono,Consolas",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
     "window.zoomLevel": 0,
@@ -10,7 +14,7 @@
     "explorer.compactFolders": false,
     "editor.formatOnPaste": true,
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.snippetSuggestions": "inline",
+    "editor.snippetSuggestions": "top",
     "files.eol": "\n",
     "editor.wordWrap": "on",
     "workbench.tree.renderIndentGuides": "none",
@@ -22,17 +26,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-    // ignore
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "*.pyc": true,
-        "*.pyo": true,
-        "__pycache__": true
-    },
     // file
     "[html]": {
         "editor.tabSize": 4
@@ -74,12 +67,10 @@
     },
     "[go]": {
         "editor.tabSize": 4,
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-vscode.Go",
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
+            "source.organizeImports": true,
+        },
     },
     // golang
     "go.goroot": "C:\\Program Files\\go",
@@ -108,7 +99,7 @@
         "documentSymbols": true,
         "workspaceSymbols": true,
         "findReferences": true,
-        "diagnostics": true,
+        "diagnostics": false,
         "documentLink": true
     },
     "go.coverageDecorator": {
@@ -128,5 +119,11 @@
         },
         "apiVersion": 2,
         "showGlobalVariables": true
-    }
+    },
+    // ts/js
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.implementationsCodeLens.enabled": true
 }

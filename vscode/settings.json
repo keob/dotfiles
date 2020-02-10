@@ -16,6 +16,7 @@
     "editor.acceptSuggestionOnEnter": "off",
     "editor.snippetSuggestions": "top",
     "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
     "editor.wordWrap": "on",
     "workbench.tree.renderIndentGuides": "none",
     "zenMode.centerLayout": false,

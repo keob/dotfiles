@@ -1,3 +1,5 @@
+function Global:prompt {"PS [$Env:username] $PWD`n> "}
+
 function GitStatus { git status }
 function GitCheckout { git checkout }
 function GitCommit { git commit }

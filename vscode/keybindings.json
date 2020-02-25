@@ -1,9 +1,4 @@
-// Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+k ctrl+i",
-        "command": "go.import.add"
-    },
     {
         "key": "ctrl+alt+n",
         "command": "explorer.newFile"
@@ -19,5 +14,19 @@
     {
         "key": "ctrl+k m",
         "command": "-workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+b",
+        "command": "breadcrumbs.toggle"
     }
 ]

@@ -28,5 +28,9 @@
     {
         "key": "ctrl+k ctrl+b",
         "command": "breadcrumbs.toggle"
+    },
+    {
+        "key": "ctrl+m ctrl+i",
+        "command": "editor.action.toggleMinimap"
     }
 ]

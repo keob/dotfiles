@@ -1,10 +1,7 @@
-function Global:prompt {"PS [$Env:username] $PWD`n> "}
-
-function GitStatus { git status }
-function GitCheckout { git checkout }
-function GitCommit { git commit }
-function GitAdd { git add }
-function GitAdds {git add . }
+function GitStatus{git status }
+function GitCheckout { git checkout $args }
+function GitCommit { git commit -m $args }
+function GitAdd { git add $args }
 
 function GoBack { Set-Location .. }
 
@@ -58,6 +55,11 @@ function killall
     }
 }
 
+function whoseport
+{
+    Get-NetTCPConnection -LocalPort $args
+}
+
 Set-Alias .. GoBack
 Set-Alias cd Set-CurrentWorkingDirectory -Option "AllScope"
 
@@ -65,7 +67,3 @@ Set-Alias gst GitStatus
 Set-Alias gct GitCommit
 Set-Alias gco GitCheckout
 Set-Alias ga GitAdd
-Set-Alias gaa GitAdds
-
-Set-Alias venv 'C:\Users\kevin\venv\venv\Scripts\Activate.ps1'
-Set-Alias py 'python'

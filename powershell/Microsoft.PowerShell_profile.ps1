@@ -1,5 +1,5 @@
-function prompt
-{
+function prompt {
+
     $path = Split-Path -leaf -path (Get-Location)
     $Date = Get-Date
 
@@ -8,7 +8,7 @@ function prompt
     Write-Host $env:USERNAME -NoNewline -ForegroundColor Cyan
     Write-Host " in " -NoNewline
     Write-Host $path" " -NoNewline -ForegroundColor Green
-    # Write-Host " "$Date -ForegroundColor Magenta
+    Write-Host ""
     Write-Host ">" -NoNewline -ForegroundColor Magenta
 
     return " " 

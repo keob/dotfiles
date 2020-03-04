@@ -1,3 +1,19 @@
+function prompt
+{
+    $path = Split-Path -leaf -path (Get-Location)
+    $Date = Get-Date
+
+    Write-Host
+    Write-Host "# " -NoNewline -ForegroundColor Blue
+    Write-Host $env:USERNAME -NoNewline -ForegroundColor Cyan
+    Write-Host " in " -NoNewline
+    Write-Host $path" " -NoNewline -ForegroundColor Green
+    # Write-Host " "$Date -ForegroundColor Magenta
+    Write-Host ">" -NoNewline -ForegroundColor Magenta
+
+    return " " 
+}
+
 function GitStatus{git status }
 function GitCheckout { git checkout $args }
 function GitCommit { git commit -m $args }

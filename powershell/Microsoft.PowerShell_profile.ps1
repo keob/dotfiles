@@ -1,19 +1,3 @@
-function prompt {
-
-    $path = Split-Path -leaf -path (Get-Location)
-    $Date = Get-Date
-
-    Write-Host
-    Write-Host "# " -NoNewline -ForegroundColor Blue
-    Write-Host $env:USERNAME -NoNewline -ForegroundColor Cyan
-    Write-Host " in " -NoNewline
-    Write-Host $path" " -NoNewline -ForegroundColor Green
-    Write-Host ""
-    Write-Host ">" -NoNewline -ForegroundColor Magenta
-
-    return " " 
-}
-
 function GitStatus{git status }
 function GitCheckout { git checkout $args }
 function GitCommit { git commit -m $args }
@@ -62,6 +46,9 @@ function which
     return $results;
 }
 
+function touch($file) { "" | Out-File $file -Encoding ASCII }
+
+
 function killall
 {
     $commands = Get-Process $args
@@ -75,6 +62,18 @@ function whoseport
 {
     Get-NetTCPConnection -LocalPort $args
 }
+
+function rm-history
+{
+	Clear-History
+	Remove-Item (Get-PSReadlineOption).HistorySavePath
+	[Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory()
+	Clear-Host
+}
+
+${function:dt} = { Set-Location ~\Desktop }
+${function:docs} = { Set-Location ~\Documents }
+${function:dl} = { Set-Location ~\Downloads }
 
 Set-Alias .. GoBack
 Set-Alias cd Set-CurrentWorkingDirectory -Option "AllScope"

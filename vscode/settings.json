@@ -1,33 +1,40 @@
 {
     // basic
-    "editor.links": false,
-    "editor.formatOnSave": false,
-    "workbench.activityBar.visible": true,
-    "workbench.sideBar.location": "left",
-    "editor.lineNumbers": "on",
-    "workbench.colorTheme": "Default Dark+",
-    "editor.fontFamily": "JetBrains Mono,Fira Code,Consolas",
+    "editor.fontFamily": "Cascadia Mono,JetBrains Mono,Consolas",
     "editor.fontSize": 18,
     "editor.fontLigatures": true,
-    "window.zoomLevel": 0,
+    "editor.lineNumbers": "on",
     "editor.renderWhitespace": "selection",
+    "editor.wordWrap": "on",
     "explorer.compactFolders": false,
     "editor.formatOnPaste": true,
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.snippetSuggestions": "top",
+    "editor.formatOnSave": true,
+    "editor.links": false,
+    "editor.minimap.enabled": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.parameterHints.enabled": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "files.enableTrash": false,
     "files.eol": "\n",
     "files.trimTrailingWhitespace": false,
-    "editor.wordWrap": "on",
-    "workbench.tree.renderIndentGuides": "onHover",
-    "zenMode.centerLayout": false,
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontSize": 18,
-    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
     "breadcrumbs.enabled": false,
+    "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
-    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 0,
+    "timeline.showView": true,
     "extensions.ignoreRecommendations": true,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     // file
     "[html]": {
         "editor.tabSize": 4
@@ -74,6 +81,11 @@
             "source.organizeImports": true
         }
     },
+    "[go.mod]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
     // golang
     "go.goroot": "C:\\Program Files\\go",
     "go.gopath": "C:\\go",
@@ -90,20 +102,13 @@
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
-        "format": false,
-        "autoComplete": true,
-        "rename": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true,
-        "goToImplementation": true,
-        "documentSymbols": true,
-        "workspaceSymbols": true,
-        "findReferences": true,
+        "format": true,
         "diagnostics": false,
-        "documentLink": true
+        "documentLink": false
     },
+    "go.languageServerFlags": [
+        "serve",
+    ],
     "go.coverageDecorator": {
         "type": "gutter",
         "coveredHighlightColor": "rgba(64,128,128,0.5)",

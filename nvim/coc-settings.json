@@ -1,0 +1,29 @@
+{
+	"suggest.enablePreview": true,
+	"codeLens.enable": true,
+	"suggest.detailMaxLength": 60,
+	"suggest.noselect": false,
+	"suggest.enablePreselect": false,
+	"suggest.triggerAfterInsertEnter": true,
+	"suggest.timeout": 5000,
+	"diagnostic.checkCurrentLine": true,
+    "diagnostic.maxWindowHeight": 20,
+    "diagnostic.errorSign": "✖",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "●",
+    "diagnostic.hintSign": "○",
+	"list.nextKeymap": "<C-n>",
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"],
+			"initializationOptions": {
+				"usePlaceholders": true,
+				"gocodeCompletionEnabled": true,
+				"diagnosticsEnabled": true,
+				"lintTool": "golint"
+			}
+		}
+	}
+}

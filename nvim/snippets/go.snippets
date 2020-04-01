@@ -1,0 +1,67 @@
+snippet init
+	func init() {
+	    ${1}
+	}
+
+snippet tyi
+	type ${1:name} interface {
+		${0}
+	}
+
+snippet tys
+	type ${1:name} struct {
+		${0}
+	}
+
+snippet new
+	new(${1:type})
+
+snippet wr
+	(${1:w} http.ResponseWriter, ${2:r} *http.Request)
+
+snippet hf
+	${1:http}.HandleFunc("${2:/}", ${3:handler})
+
+snippet hand
+	func ${1}(${2:w} http.ResponseWriter, ${3:r} *http.Request) {${0}}
+
+snippet herr
+	http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})
+
+snippet las
+	http.ListenAndServe("${1::8080}", ${2:nil})
+
+snippet sv
+	http.Serve("${1::8080}", ${2:nil})
+
+snippet gaf
+	go func(${1}) {
+		${0}
+	}(${2})
+
+snippet gf
+	go ${1:func}(${0})
+
+snippet tf
+	func Test${1}(t *testing.T) {
+		${0}
+	}
+
+snippet bf
+	func Benchmark${1}(b *testing.B) {
+		for ${2:i} := 0; ${2:i} < b.N; ${2:i}++ {
+			${0}
+		}
+	}
+
+snippet ef
+	func Example${1}() {
+		${2}
+		//Output:
+		${3}
+	}
+
+snippet meth
+	func (${1:receiver} ${2:type}) ${3:method}(${4}) ${5} {
+		${0}
+	}

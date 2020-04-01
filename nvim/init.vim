@@ -8,18 +8,19 @@ syntax on
 set showmode
 set showcmd
 set clipboard+=unnamed
+set clipboard^=unnamedplus
 set splitbelow
 set splitright
 set number
 set nocompatible
 set autoread
-set autowriteall
+set autowrite
+set hidden
+set cindent
 set autoindent
 set smartindent
-set tabstop=4
 set shiftwidth=4
-set softtabstop=4
-" set relativenumber
+set colorcolumn=80
 set cursorline
 " set cursorcolumn
 set textwidth=80
@@ -33,13 +34,17 @@ set showmatch
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
 set nobackup
 set noswapfile
 set undofile
+set splitright
+set splitbelow
 set autochdir
-set visualbell
+set novisualbell
 set noerrorbells
 set history=1000
+set backspace=indent,eol,start
 " set list
 " set listchars =tab:>-,trail:-
 set wildmenu
@@ -48,24 +53,39 @@ set ambiwidth=double
 set wrap
 set linebreak
 
+set lazyredraw
+set pumheight=10
+set ttyfast
 
-set mouse=a
-set selection=exclusive
-set selectmode=mouse,key
+" set mouse=a
+" set selection=exclusive
+" set selectmode=mouse,key
 
 filetype plugin indent on
 
 set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
-
+set fileformats=unix,dos,mac
+set notimeout
+set ttimeout
+set ttimeoutlen=10
 
 " >>>=========Keymap============
 
 let mapleader=","
 
-noremap <leader>i :PlugInstall<cr>
-noremap <leader>u :PlugUpdate<cr>
+noremap <leader>w :w<cr>
+
+nnoremap <space> zz
+
+noremap <leader><leader>i :PlugInstall<cr>
+noremap <leader><leader>u :PlugUpdate<cr>
+noremap <leader><leader>c :PlugClean<cr>
+
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
+nnoremap <leader>a :cclose<CR>
 
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
@@ -120,8 +140,9 @@ nnoremap <M-l> :vertical resize +5<cr>
 
 " ====Buffer====
 
-nnoremap <C-left> :bn<CR>
-nnoremap <C-right> :bp<CR>
+nnoremap <M-n> :bn<CR>
+nnoremap <M-m> :bp<CR>
+nnoremap <M-c> :bc<CR>
 
 " ====Line====
 
@@ -157,7 +178,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
-Plug 'rust-lang/rust.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " >>>=========Config============
@@ -294,12 +315,26 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
 
 " ====Airline====
 
 let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -308,12 +343,12 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " ====Nerdtree====
 
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 25
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " let NERDTreeDirArrowExpandable = '▷'
 " let NERDTreeDirArrowCollapsible = '▼'
-map <leader>b :NERDTreeToggle<CR>
+map <leader>g :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHidden=0 
 let NERDTreeIgnore = ['\.pyc$', '\.swp', '\.swo', '\.vscode',  'node_modules', '__pycache__']
@@ -333,10 +368,11 @@ let g:NERDTreeIndicatorMapCustom = {
         \ }
 
 " ====ultisnips====
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsListSnippets="<c-l>"
 
 " ====Nerdcommenter====
 
@@ -352,8 +388,7 @@ let g:NERDToggleCheckAllLines = 1
 " ====Startify====
 
 let g:startify_bookmarks            = [
-            \ '~/workspace',
-            \ '~/github',
+            \ '~/workspace'
             \]
 let g:startify_files_number = 20
 
@@ -375,15 +410,9 @@ endfunction
 " ====Autoformat====
 
 noremap <leader>f :Autoformat<CR>
-" noremap <leader>g :GoImports<CR>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-
-" ====Rust====
-
-let g:rustfmt_autosave = 1
-
 
 " ====Go====
 
@@ -391,3 +420,19 @@ let g:go_code_completion_enabled = 1
 let g:go_test_show_name = 0
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+let g:go_template_autocreate = 0
+let g:go_fmt_fail_silently = 1
+let g:go_debug_windows = {
+      \ 'vars':  'leftabove 35vnew',
+      \ 'stack': 'botright 10new',
+\ }
+let g:go_test_prepend_name = 1
+let g:go_list_type = "quickfix"
+let g:go_auto_type_info = 0
+let g:go_auto_sameids = 0
+let g:go_null_module_warning = 0
+let g:go_echo_command_info = 1
+let g:go_autodetect_gopath = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['vet', 'golint']
+let g:go_modifytags_transform = 'camelcase'

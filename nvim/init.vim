@@ -142,7 +142,7 @@ nnoremap <M-l> :vertical resize +5<cr>
 
 nnoremap <M-n> :bn<CR>
 nnoremap <M-m> :bp<CR>
-nnoremap <M-c> :bc<CR>
+nnoremap <M-c> :bd<CR>
 
 " ====Line====
 

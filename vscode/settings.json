@@ -1,6 +1,6 @@
 {
     // basic
-    "editor.fontFamily": "Cascadia Mono,JetBrains Mono,Consolas",
+    "editor.fontFamily": "JetBrains Mono,Consolas",
     "editor.fontSize": 18,
     "editor.fontLigatures": true,
     "editor.lineNumbers": "on",
@@ -52,9 +52,6 @@
     "[python]": {
         "editor.tabSize": 4
     },
-    "[dockerfile]": {
-        "editor.tabSize": 2
-    },
     "[javascriptreact]": {
         "editor.tabSize": 2
     },
@@ -64,27 +61,12 @@
     "[vue]": {
         "editor.tabSize": 2
     },
-    "[makefile]": {},
-    "[markdown]": {
-        "editor.tabSize": 4
-    },
-    "[c]": {
-        "editor.tabSize": 4
-    },
-    "[cpp]": {
-        "editor.tabSize": 4
-    },
     "[go]": {
         "editor.tabSize": 4,
         "editor.defaultFormatter": "ms-vscode.Go",
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    },
-    "[go.mod]": {
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
     },
     // golang
     "go.goroot": "C:\\Program Files\\go",
@@ -103,12 +85,9 @@
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
         "format": true,
-        "diagnostics": false,
-        "documentLink": false
+        "diagnostics": true,
+        "documentLink": true
     },
-    "go.languageServerFlags": [
-        "serve",
-    ],
     "go.coverageDecorator": {
         "type": "gutter",
         "coveredHighlightColor": "rgba(64,128,128,0.5)",
@@ -132,5 +111,14 @@
     "javascript.referencesCodeLens.showOnAllFunctions": true,
     "typescript.referencesCodeLens.enabled": true,
     "typescript.referencesCodeLens.showOnAllFunctions": true,
-    "typescript.implementationsCodeLens.enabled": true
+    "typescript.implementationsCodeLens.enabled": true,
+    // emmet
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "pug"
+    }
 }

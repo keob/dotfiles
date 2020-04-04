@@ -12,7 +12,6 @@ set clipboard^=unnamedplus
 set splitbelow
 set splitright
 set number
-set nocompatible
 set autoread
 set autowrite
 set hidden
@@ -45,11 +44,11 @@ set novisualbell
 set noerrorbells
 set history=1000
 set backspace=indent,eol,start
-" set list
+set list
 " set listchars =tab:>-,trail:-
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 set wildmenu
 set wildmode=longest:list,full
-set ambiwidth=double
 set wrap
 set linebreak
 
@@ -61,6 +60,9 @@ set ttyfast
 " set selection=exclusive
 " set selectmode=mouse,key
 
+filetype on
+filetype plugin on
+filetype indent on
 filetype plugin indent on
 
 set encoding=UTF-8
@@ -86,12 +88,6 @@ noremap <leader><leader>c :PlugClean<cr>
 map <C-n> :cn<CR>
 map <C-m> :cp<CR>
 nnoremap <leader>a :cclose<CR>
-
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
 
 " ====Tab====
 

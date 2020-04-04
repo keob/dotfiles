@@ -17,6 +17,7 @@ alias cls='clear'
 alias md='mkdir'
 alias ll='ls -l'
 alias la='ls -a'
+alias lh='ls -lh'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -29,16 +30,49 @@ alias ln='ln -i'
 alias df='df -h'
 alias wget='wget -c'
 alias work='cd $HOME/workspace'
-alias github='cd $HOME/github'
 alias dl='cd $HOME/Downloads'
-alias dc='cd $HOME/Documents'
+alias doc='cd $HOME/Documents'
 alias ga='git add'
+alias gaa='git add .'
 alias gst='git status'
 alias gcm='git commit -m'
 alias gco='git checkout'
+alias gph='git push'
+alias gpl='git pull'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias venv='source $HOME/venv/basic/bin/activate'
+
+export HISTCONTROL=ignoreboth:erasedups  
+export HISTFILE=~/.bash_history
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTTIMEFORMAT='%F %T '
+shopt -s histappend
+shopt -s cmdhist
+
+# Functions
+# extracts the given file
+x () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
 
 # Environment
 # Go
@@ -48,8 +82,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
 export NVM_NODEJS_ORG_MIRROR="http://npm.taobao.org/mirrors/node"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-

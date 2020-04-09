@@ -1,7 +1,7 @@
 " >>>=========Basic============
 
 set t_Co=256
-colorscheme hybrid
+colorscheme gruvbox
 set background=dark
 syntax enable
 syntax on
@@ -19,13 +19,14 @@ set cindent
 set autoindent
 set smartindent
 set shiftwidth=4
+set tabstop=4
 set colorcolumn=80
 set cursorline
 " set cursorcolumn
 set textwidth=80
 set lbr
 set fo+=mB
-set scrolloff=5
+" set scrolloff=5
 set laststatus=2
 set cmdheight=1
 set ruler
@@ -45,8 +46,9 @@ set noerrorbells
 set history=1000
 set backspace=indent,eol,start
 set list
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
 " set listchars =tab:>-,trail:-
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 set wildmenu
 set wildmode=longest:list,full
 set wrap
@@ -78,8 +80,6 @@ set ttimeoutlen=10
 let mapleader=","
 
 noremap <leader>w :w<cr>
-
-nnoremap <space> zz
 
 noremap <leader><leader>i :PlugInstall<cr>
 noremap <leader><leader>u :PlugUpdate<cr>
@@ -136,8 +136,8 @@ nnoremap <M-l> :vertical resize +5<cr>
 
 " ====Buffer====
 
-nnoremap <M-n> :bn<CR>
-nnoremap <M-m> :bp<CR>
+nnoremap <M-h> :bn<CR>
+nnoremap <M-l> :bp<CR>
 nnoremap <M-c> :bd<CR>
 
 " ====Line====
@@ -174,7 +174,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
-Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 " >>>=========Config============
@@ -318,7 +318,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_next = '<tab>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
@@ -339,7 +339,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " ====Nerdtree====
 
-let g:NERDTreeWinSize = 25
+let g:NERDTreeWinSize = 23
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " let NERDTreeDirArrowExpandable = '▷'

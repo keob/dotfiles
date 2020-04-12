@@ -1,9 +1,12 @@
 {
     // basic
-    "editor.fontFamily": "JetBrains Mono,Consolas",
+    "editor.fontFamily": "JetBrains Mono,Fira Code,Consolas",
     "editor.fontSize": 18,
     "editor.fontLigatures": true,
     "editor.lineNumbers": "on",
+    "editor.quickSuggestionsDelay": 3,
+    "editor.snippetSuggestions": "inline",
+    "editor.suggest.showSnippets": true,
     "editor.renderWhitespace": "selection",
     "editor.wordWrap": "on",
     "explorer.compactFolders": false,
@@ -11,12 +14,27 @@
     "editor.formatOnSave": true,
     "editor.links": false,
     "editor.minimap.enabled": true,
-    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.parameterHints.enabled": true,
+    "editor.semanticHighlighting.enabled": true,
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,
         "strings": true
+    },
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true
     },
     "files.enableTrash": false,
     "files.eol": "\n",
@@ -33,14 +51,13 @@
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
     "window.zoomLevel": 0,
-    "timeline.showView": true,
     "extensions.ignoreRecommendations": true,
     // file
     "[html]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[css]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[javascript]": {
         "editor.insertSpaces": true,
@@ -48,9 +65,6 @@
     },
     "[typescript]": {
         "editor.tabSize": 2
-    },
-    "[python]": {
-        "editor.tabSize": 4
     },
     "[javascriptreact]": {
         "editor.tabSize": 2
@@ -63,7 +77,6 @@
     },
     "[go]": {
         "editor.tabSize": 4,
-        "editor.defaultFormatter": "ms-vscode.Go",
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
@@ -71,12 +84,6 @@
     // golang
     "go.goroot": "C:\\Program Files\\go",
     "go.gopath": "C:\\go",
-    "go.autocompleteUnimportedPackages": true,
-    "go.gocodePackageLookupMode": "go",
-    "go.gotoSymbol.includeImports": true,
-    "go.useCodeSnippetsOnFunctionSuggest": true,
-    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
-    "go.docsTool": "gogetdoc",
     "go.lintTool": "golint",
     "go.lintFlags": [
         "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""
@@ -85,40 +92,24 @@
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
         "format": true,
-        "diagnostics": true,
+        "diagnostics": false,
         "documentLink": true
     },
-    "go.coverageDecorator": {
-        "type": "gutter",
-        "coveredHighlightColor": "rgba(64,128,128,0.5)",
-        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
-        "coveredGutterStyle": "blockblue",
-        "uncoveredGutterStyle": "slashyellow"
-    },
-    "go.delveConfig": {
-        "dlvLoadConfig": {
-            "followPointers": true,
-            "maxVariableRecurse": 1,
-            "maxStringLen": 120,
-            "maxArrayValues": 64,
-            "maxStructFields": -1
-        },
-        "apiVersion": 2,
-        "showGlobalVariables": true
-    },
     // ts/js
-    "javascript.referencesCodeLens.enabled": true,
-    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.locale": "en",
+    "typescript.tsdk": "C:\\Users\\kevin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
     "typescript.referencesCodeLens.enabled": true,
     "typescript.referencesCodeLens.showOnAllFunctions": true,
     "typescript.implementationsCodeLens.enabled": true,
     // emmet
-    "emmet.triggerExpansionOnTab": true,
+    // "emmet.triggerExpansionOnTab": true,
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "vue-html": "html",
         "razor": "html",
         "plaintext": "pug"
-    }
+    },
+    // live server
+    "liveServer.settings.donotShowInfoMsg": true
 }

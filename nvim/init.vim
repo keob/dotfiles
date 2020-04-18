@@ -26,7 +26,7 @@ set cursorline
 set textwidth=80
 set lbr
 set fo+=mB
-" set scrolloff=5
+set scrolloff=5
 set laststatus=2
 set cmdheight=1
 set ruler
@@ -136,8 +136,8 @@ nnoremap <M-l> :vertical resize +5<cr>
 
 " ====Buffer====
 
-nnoremap <M-h> :bn<CR>
-nnoremap <M-l> :bp<CR>
+nnoremap <M-j> :bn<CR>
+nnoremap <M-k> :bp<CR>
 nnoremap <M-c> :bd<CR>
 
 " ====Line====
@@ -339,7 +339,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " ====Nerdtree====
 
-let g:NERDTreeWinSize = 23
+let g:NERDTreeWinSize = 25
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " let NERDTreeDirArrowExpandable = '▷'
@@ -383,9 +383,6 @@ let g:NERDToggleCheckAllLines = 1
 
 " ====Startify====
 
-let g:startify_bookmarks            = [
-            \ '~/workspace'
-            \]
 let g:startify_files_number = 20
 
 

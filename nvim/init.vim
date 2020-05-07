@@ -1,7 +1,7 @@
 " >>>=========Basic============
 
 set t_Co=256
-colorscheme gruvbox
+colorscheme hybrid
 set background=dark
 syntax enable
 syntax on
@@ -45,8 +45,8 @@ set novisualbell
 set noerrorbells
 set history=1000
 set backspace=indent,eol,start
-set list
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
+" set list
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
 " set listchars =tab:>-,trail:-
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 set wildmenu
@@ -162,8 +162,6 @@ nmap <Leader>v "+p
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
@@ -175,6 +173,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " >>>=========Config============
@@ -329,13 +328,13 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " ====Airline====
 
-let g:airline_theme='tomorrow'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+      \ },
+      \ }
 
 " ====Nerdtree====
 

@@ -2,7 +2,7 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "alwaysShowTabs": true,
     "initialCols": 80,
-    "initialRows": 24,
+    "initialRows": 20,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "profiles": {
         "defaults": {
@@ -10,8 +10,8 @@
             "closeOnExit": true,
             "cursorColor": "#FFFFFF",
             "cursorShape": "bar",
-            "fontFace": "JetBrains Mono",
-            "fontSize": 14,
+            "fontFace": "Iosevka",
+            "fontSize": 17,
             "hidden": false,
             "colorScheme": "Dracula",
             "historySize": 9001,
@@ -22,13 +22,14 @@
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "name": "PowerShell Core",
+		 "commandline": "pwsh.exe",
                 "source": "Windows.Terminal.PowershellCore",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": false
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "cmd",
+                "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true

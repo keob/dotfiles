@@ -3,6 +3,20 @@ function GitCheckout { git checkout $args }
 function GitCommit { git commit -m $args }
 function GitAdd { git add $args }
 
+function prompt {
+
+    $path = Split-Path -leaf -path (Get-Location)
+
+    Write-Host
+    Write-Host "# " -NoNewline -ForegroundColor Blue
+    Write-Host $env:USERNAME -NoNewline -ForegroundColor Cyan
+    Write-Host " in " -NoNewline
+    Write-Host $path" " -NoNewline -ForegroundColor Green
+    Write-Host ">" -NoNewline -ForegroundColor Magenta
+
+    return " " 
+}
+
 function GoBack { Set-Location .. }
 
 function Set-CurrentWorkingDirectory
@@ -72,7 +86,7 @@ function rm-history
 }
 
 ${function:dt} = { Set-Location ~\Desktop }
-${function:docs} = { Set-Location ~\Documents }
+${function:doc} = { Set-Location ~\Documents }
 ${function:dl} = { Set-Location ~\Downloads }
 
 Set-Alias .. GoBack

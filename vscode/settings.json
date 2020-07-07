@@ -1,16 +1,11 @@
 {
-    // basic
     "editor.fontFamily": "Iosevka,Fira Code,JetBrains Mono,Consolas",
     "editor.fontSize": 18,
-    "editor.rulers": [
-        80
-    ],
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": true,
     "editor.smoothScrolling": true,
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.lineNumbers": "on",
-    "editor.quickSuggestionsDelay": 3,
     "editor.snippetSuggestions": "inline",
     "editor.suggest.showSnippets": true,
     "editor.renderWhitespace": "selection",
@@ -45,16 +40,17 @@
         "**/node_modules": true,
         "**/.DS_Store": true
     },
-    "files.insertFinalNewline": true,
     "files.enableTrash": false,
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
-    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tree.renderIndentGuides": "onHover",
     "workbench.colorTheme": "Default Dark+",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.enableNaturalLanguageSearch": false,
+    "debug.console.fontFamily": "Iosevka",
+    "debug.console.fontSize": 18,
     "terminal.integrated.fontFamily": "Iosevka",
     "terminal.integrated.fontSize": 20,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
@@ -65,7 +61,6 @@
     "extensions.ignoreRecommendations": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    // file
     "[html]": {
         "editor.tabSize": 2
     },
@@ -89,12 +84,12 @@
         "editor.tabSize": 2
     },
     "[go]": {
-        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
     },
-    // golang
     "go.goroot": "C:\\Program Files\\go",
     "go.gopath": "C:\\go",
     "go.lintTool": "golint",
@@ -104,25 +99,7 @@
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
-        "format": true,
         "diagnostics": true,
         "documentLink": true
-    },
-    // ts/js
-    "typescript.locale": "en",
-    "typescript.tsdk": "C:\\Users\\kevin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
-    "typescript.referencesCodeLens.enabled": true,
-    "typescript.referencesCodeLens.showOnAllFunctions": true,
-    "typescript.implementationsCodeLens.enabled": true,
-    // emmet
-    // "emmet.triggerExpansionOnTab": true,
-    "emmet.showSuggestionsAsSnippets": true,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "vue-html": "html",
-        "razor": "html",
-        "plaintext": "pug"
-    },
-    // live server
-    "liveServer.settings.donotShowInfoMsg": true
+    }
 }

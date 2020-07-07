@@ -1,6 +1,6 @@
 [user]
 	name = keob
-	email = bugbinbo@outlook.com
+	email = isgopher@outlook.com
 [color]
 	branch = auto
 	status = auto
@@ -18,6 +18,3 @@
 	tree = log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(black)[%cr]%C(reset)  %x09%C(black)%an: %s %C(reset)'
 [credential]
 	helper = store
-[core]
-	editor = nvim
-	autocrlf = input

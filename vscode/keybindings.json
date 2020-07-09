@@ -32,5 +32,9 @@
     {
         "key": "ctrl+m ctrl+i",
         "command": "editor.action.toggleMinimap"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.joinLines"
     }
 ]

@@ -96,7 +96,7 @@
 	"Error Wrap": {
 		"prefix": "fef",
 		"body": [
-			"fmt.Errorf(\"$1: %w\", err)"
+			"fmt.Errorf(\"$1\", $2)"
 		]
 	},
 	"Return Error": {

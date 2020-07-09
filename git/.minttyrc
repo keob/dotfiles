@@ -1,7 +1,7 @@
 ThemeFile=dracula
-Transparency=low
-Font=JetBrains Mono
-FontHeight=14
+Transparency=off
+Font=Iosevka
+FontHeight=16
 Locale=C
 Charset=UTF-8
 CtrlAltIsAltGr=yes
@@ -11,3 +11,4 @@ Scrollbar=none
 Language=en
 Term=xterm-256color
 BellType=0
+Rows=23

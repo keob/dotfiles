@@ -2,17 +2,26 @@
 	name = keob
 	email = isgopher@outlook.com
 [color]
-	branch = auto
-	status = auto
-	diff = auto
-	log = auto
-	grep = auto
-	interactive = auto
+	branch = always
+	status = always
+	diff = always
+	log = always
+	grep = always
+	interactive = always
 [alias]
 	co = checkout
 	ci = commit
 	st = status
-	br = branch
+	br = branch -v
+	fo = fetch origin
+	fu = fetch upstream
+	po = push origin
+	unstage = reset HEAD
+	uncommit = reset --soft HEAD^
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	contributors = shortlog --summary --numbered
 	logg = log --graph --decorate --all
 	dog = log --all --decorate --oneline --graph
 	tree = log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(black)[%cr]%C(reset)  %x09%C(black)%an: %s %C(reset)'

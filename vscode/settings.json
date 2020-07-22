@@ -1,10 +1,10 @@
 {
     "editor.fontFamily": "Iosevka,Fira Code,JetBrains Mono,Consolas",
     "editor.fontSize": 18,
+    "editor.fontLigatures": false,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": true,
     "editor.smoothScrolling": true,
-    "editor.fontLigatures": false,
     "editor.lineNumbers": "on",
     "editor.snippetSuggestions": "inline",
     "editor.suggest.showSnippets": true,
@@ -15,7 +15,7 @@
     "editor.formatOnSave": true,
     "editor.links": false,
     "editor.minimap.enabled": true,
-    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnEnter": "on",
     "editor.parameterHints.enabled": true,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 200,
@@ -45,7 +45,7 @@
     "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
-    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.tree.renderIndentGuides": "none",
     "workbench.colorTheme": "Default Dark+",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -90,16 +90,29 @@
             "source.organizeImports": true
         }
     },
-    "go.goroot": "C:\\Program Files\\go",
     "go.gopath": "C:\\go",
+    "go.goroot": "C:\\Program Files\\go",
+    "go.lintOnSave": "off",
     "go.lintTool": "golint",
     "go.lintFlags": [
         "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""
     ],
-    "go.formatTool": "goimports",
+    "go.formatTool": "gofmt",
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
         "documentLink": true
-    }
+    },
+    "typescript.locale": "en",
+    "typescript.tsdk": "C:\\Users\\kevin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "javascriptreact": "javascriptreact",
+        "typescriptreact": "typescriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "pug"
+    },
+    "liveServer.settings.donotShowInfoMsg": true
 }

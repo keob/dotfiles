@@ -5,28 +5,16 @@
 			"close($0)"
 		]
 	},
-	"Default": {
-		"prefix": "def",
-		"body": [
-			"default:"
-		]
-	},
 	"Append": {
-		"prefix": "a",
+		"prefix": "app",
 		"body": [
-			"$1 = append($1, $0)"
+			"$1 = append($2, $3)"
 		]
 	},
 	"delete": {
 		"prefix": "del",
 		"body": [
 			"delete($1, \"$2\")"
-		]
-	},
-	"Case": {
-		"prefix": "ca",
-		"body": [
-			"case $1:"
 		]
 	},
 	"defer": {
@@ -36,14 +24,14 @@
 		]
 	},
 	"defer func": {
-		"prefix": "de",
+		"prefix": "df",
 		"body": [
 			"defer func() {",
 			"    $0",
 			"}()"
 		]
 	},
-	"if": {
+	"ifok": {
 		"prefix": "ifok",
 		"body": [
 			"if ${1:v}, ok := $2; ok {",
@@ -51,46 +39,58 @@
 			"}"
 		]
 	},
-	"Bytes": {
-		"prefix": "by",
-		"body": [
-			"[]byte($1)"
-		]
-	},
 	"fmt.Printf": {
-		"prefix": "pf",
+		"prefix": "fpf",
 		"body": [
-			"fmt.Printf(\"${1:%#v}\\n\", $0)"
+			"fmt.Printf(\"$1\", $2)"
 		]
 	},
-	"fmt.Println": {
-		"prefix": "pl",
-		"body": [
-			"fmt.Println(\"${1:%#v}\\n\", $0)"
-		]
-	},
-	"Sprintf": {
+	"fmt.Sprintf": {
 		"prefix": "fsf",
 		"body": [
-			"fmt.Sprintf(\"$1\", $0)"
+			"fmt.Sprintf(\"$1\", $2)"
 		]
 	},
 	"fmt.Fprintf": {
-		"prefix": "fpf",
+		"prefix": "fff",
 		"body": [
-			"fmt.Fprintf(w, \"${1:%s}\", $0)"
+			"fmt.Fprintf($1, \"$2\", $3)"
 		]
 	},
 	"log.Printf": {
 		"prefix": "lpf",
 		"body": [
-			"log.Printf(\"${1:%v}\", $0)"
+			"log.Printf(\"$1\", $2)"
+		]
+	},
+	"fmt.Println": {
+		"prefix": "fpl",
+		"body": [
+			"fmt.Println($0)"
+		]
+	},
+	"fmt.Sprintln": {
+		"prefix": "fsl",
+		"body": [
+			"fmt.Sprintln($0)"
+		]
+	},
+	"fmt.Fprintln": {
+		"prefix": "ffl",
+		"body": [
+			"fmt.Fprintln($1, $2)"
+		]
+	},
+	"log.Println": {
+		"prefix": "lpl",
+		"body": [
+			"log.Println($0)"
 		]
 	},
 	"log.Fatalf": {
 		"prefix": "lff",
 		"body": [
-			"log.Fatalf(\"error$1: %s\", ${0:err})"
+			"log.Fatalf(\"$1\", $2)"
 		]
 	},
 	"Error Wrap": {
@@ -114,7 +114,7 @@
 	"Map": {
 		"prefix": "ma",
 		"body": [
-			"map[${1:string}]${0:value}"
+			"map[${1:key}]${2:value}"
 		]
 	},
 	"If Error Oneliner": {
@@ -125,19 +125,19 @@
 			"}"
 		]
 	},
-	"For Range": {
-		"prefix": "fv",
+	"For Range to get key and value": {
+		"prefix": "fkv",
 		"body": [
-			"for _, ${1:v} := range ${2:value} {",
-			"    $0",
+			"for {1:key}, ${2:value} := range ${3} {",
+			"    $4",
 			"}"
 		]
 	},
-	"For Range Chan": {
+	"For Range to get value": {
 		"prefix": "fr",
 		"body": [
-			"for ${1:v} := range ${2:value} {",
-			"  $0",
+			"for ${1:value} := range ${2} {",
+			"    $0",
 			"}"
 		]
 	},
@@ -164,8 +164,8 @@
 	"Function": {
 		"prefix": "f",
 		"body": [
-			"// $1 $2.",
-			"func $1($3) $4 {",
+			"// $1$4.",
+			"func $1($2) $3 {",
 			"    $0",
 			"}"
 		]
@@ -181,8 +181,8 @@
 	"Test Function": {
 		"prefix": "test",
 		"body": [
-			"// Test $2.",
-			"func Test$1(t *testing.T) {",
+			"// Test $1.",
+			"func Test$2(t *testing.T) {",
 			"    $0",
 			"}"
 		]
@@ -196,10 +196,10 @@
 		]
 	},
 	"Method Point": {
-		"prefix": "m",
+		"prefix": "mp",
 		"body": [
-			"// $3 ${4:implementation}.",
-			"func ($1 *$2) $3($5) $6 {",
+			"// $1$6.",
+			"func ($1 *$2) $3($4) $5 {",
 			"    $0",
 			"}"
 		]
@@ -207,8 +207,8 @@
 	"Method": {
 		"prefix": "mm",
 		"body": [
-			"// $3 ${4:implementation}.",
-			"func ($1 $2) $3($5) $6 {",
+			"// $1$6.",
+			"func ($1 $2) $3($4) $5 {",
 			"    $0",
 			"}"
 		]
@@ -249,15 +249,8 @@
 		"body": [
 			"// $1 $2.",
 			"type $1 interface {",
-			"  $0",
+			"    $0",
 			"}"
 		]
 	},
-	"Struct Field": {
-		"prefix": "sf",
-		"body": [
-			"// $1 $3.",
-			"${1:Name} ${2:string}"
-		]
-	}
 }

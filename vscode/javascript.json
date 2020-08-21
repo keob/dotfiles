@@ -14,7 +14,7 @@
     "Console Clear": {
         "prefix": "cc",
         "body": [
-            "console.clear($0);"
+            "console.clear();"
         ]
     },
     "Destructure": {

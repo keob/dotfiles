@@ -36,5 +36,25 @@
     {
         "key": "ctrl+j",
         "command": "editor.action.joinLines"
+    },
+    {
+        "key": "alt+o",
+        "command": "extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+o",
+        "command": "-extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "extension.liveServer.goOffline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+c",
+        "command": "-extension.liveServer.goOffline",
+        "when": "editorTextFocus"
     }
 ]

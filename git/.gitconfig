@@ -10,7 +10,10 @@
 	interactive = always
 [alias]
 	co = checkout
-	ci = commit
+	cob = checkout -b
+	cm = commit -m
+	amend = commit --amend -m
+	aa = add -A .
 	st = status
 	br = branch -v
 	fo = fetch origin
@@ -24,6 +27,7 @@
 	contributors = shortlog --summary --numbered
 	logg = log --graph --decorate --all
 	dog = log --all --decorate --oneline --graph
-	tree = log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(black)[%cr]%C(reset)  %x09%C(black)%an: %s %C(reset)'
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 [credential]
 	helper = store

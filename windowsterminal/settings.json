@@ -1,8 +1,8 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "alwaysShowTabs": true,
-    "initialCols": 100,
-    "initialRows": 25,
+    "initialCols": 80,
+    "initialRows": 26,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "profiles": {
         "defaults": {
@@ -10,19 +10,19 @@
             "closeOnExit": true,
             "cursorColor": "#FFFFFF",
             "cursorShape": "bar",
-            "fontFace": "Iosevka",
-            "fontSize": 16,
+            "fontFace": "Fira Code",
+            "fontSize": 14,
             "hidden": false,
             "colorScheme": "Dracula",
             "historySize": 9001,
-            "padding": "3",
+            "padding": "5",
             "snapOnInput": true
         },
         "list": [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "name": "PowerShell Core",
-		 "commandline": "pwsh.exe",
+                "name": "PowerShell",
+                "commandline": "pwsh.exe",
                 "source": "Windows.Terminal.PowershellCore",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": false
@@ -197,252 +197,5 @@
             "yellow": "#B58900"
         }
     ],
-    "keybindings": [
-        {
-            "command": "splitHorizontal",
-            "keys": [
-                "alt+shift+-"
-            ]
-        },
-        {
-            "command": "splitVertical",
-            "keys": [
-                "alt+shift+plus"
-            ]
-        },
-        {
-            "command": {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "keys": [
-                "alt+down"
-            ]
-        },
-        {
-            "command": {
-                "action": "moveFocus",
-                "direction": "left"
-            },
-            "keys": [
-                "alt+left"
-            ]
-        },
-        {
-            "command": {
-                "action": "moveFocus",
-                "direction": "right"
-            },
-            "keys": [
-                "alt+right"
-            ]
-        },
-        {
-            "command": {
-                "action": "moveFocus",
-                "direction": "up"
-            },
-            "keys": [
-                "alt+up"
-            ]
-        },
-        {
-            "command": {
-                "action": "resizePane",
-                "direction": "down"
-            },
-            "keys": [
-                "alt+shift+down"
-            ]
-        },
-        {
-            "command": {
-                "action": "resizePane",
-                "direction": "left"
-            },
-            "keys": [
-                "alt+shift+left"
-            ]
-        },
-        {
-            "command": {
-                "action": "resizePane",
-                "direction": "right"
-            },
-            "keys": [
-                "alt+shift+right"
-            ]
-        },
-        {
-            "command": {
-                "action": "resizePane",
-                "direction": "up"
-            },
-            "keys": [
-                "alt+shift+up"
-            ]
-        },
-        {
-            "command": "closeTab",
-            "keys": [
-                "ctrl+w"
-            ]
-        },
-        {
-            "command": "newTab",
-            "keys": [
-                "ctrl+t"
-            ]
-        },
-        {
-            "command": "newTabProfile0",
-            "keys": [
-                "ctrl+shift+1"
-            ]
-        },
-        {
-            "command": "newTabProfile1",
-            "keys": [
-                "ctrl+shift+2"
-            ]
-        },
-        {
-            "command": "newTabProfile2",
-            "keys": [
-                "ctrl+shift+3"
-            ]
-        },
-        {
-            "command": "newTabProfile3",
-            "keys": [
-                "ctrl+shift+4"
-            ]
-        },
-        {
-            "command": "newTabProfile4",
-            "keys": [
-                "ctrl+shift+5"
-            ]
-        },
-        {
-            "command": "newTabProfile5",
-            "keys": [
-                "ctrl+shift+6"
-            ]
-        },
-        {
-            "command": "newTabProfile6",
-            "keys": [
-                "ctrl+shift+7"
-            ]
-        },
-        {
-            "command": "newTabProfile7",
-            "keys": [
-                "ctrl+shift+8"
-            ]
-        },
-        {
-            "command": "newTabProfile8",
-            "keys": [
-                "ctrl+shift+9"
-            ]
-        },
-        {
-            "command": "nextTab",
-            "keys": [
-                "ctrl+tab"
-            ]
-        },
-        {
-            "command": "openSettings",
-            "keys": [
-                "ctrl+,"
-            ]
-        },
-        {
-            "command": "prevTab",
-            "keys": [
-                "ctrl+shift+tab"
-            ]
-        },
-        {
-            "command": "scrollDown",
-            "keys": [
-                "ctrl+shift+down"
-            ]
-        },
-        {
-            "command": "scrollDownPage",
-            "keys": [
-                "ctrl+shift+pgdn"
-            ]
-        },
-        {
-            "command": "scrollUp",
-            "keys": [
-                "ctrl+shift+up"
-            ]
-        },
-        {
-            "command": "scrollUpPage",
-            "keys": [
-                "ctrl+shift+pgup"
-            ]
-        },
-        {
-            "command": "switchToTab0",
-            "keys": [
-                "alt+1"
-            ]
-        },
-        {
-            "command": "switchToTab1",
-            "keys": [
-                "alt+2"
-            ]
-        },
-        {
-            "command": "switchToTab2",
-            "keys": [
-                "alt+3"
-            ]
-        },
-        {
-            "command": "switchToTab3",
-            "keys": [
-                "alt+4"
-            ]
-        },
-        {
-            "command": "switchToTab4",
-            "keys": [
-                "alt+5"
-            ]
-        },
-        {
-            "command": "switchToTab5",
-            "keys": [
-                "alt+6"
-            ]
-        },
-        {
-            "command": "switchToTab6",
-            "keys": [
-                "alt+7"
-            ]
-        },
-        {
-            "command": "switchToTab7",
-            "keys": [
-                "alt+8"
-            ]
-        },
-        {
-            "command": "switchToTab8",
-            "keys": [
-                "alt+9"
-            ]
-        }
-    ]
+    "keybindings": []
 }

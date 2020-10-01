@@ -56,5 +56,13 @@
         "key": "alt+l alt+c",
         "command": "-extension.liveServer.goOffline",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "workbench.action.splitEditorRight"
     }
 ]

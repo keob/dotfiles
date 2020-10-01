@@ -1,8 +1,10 @@
 {
-    "editor.fontFamily": "JetBrains Mono,Fira Code,Consolas,Microsoft Yahei",
+    "editor.fontFamily": "Fira Code,JetBrains Mono,Consolas,Microsoft Yahei",
     "editor.fontSize": 18,
+    "editor.detectIndentation": true,
+    "editor.renderIndentGuides": false,
     "editor.fontLigatures": true,
-    "editor.cursorBlinking": "phase",
+    "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": true,
     "editor.smoothScrolling": true,
     "editor.lineNumbers": "on",
@@ -14,17 +16,13 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.links": false,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.parameterHints.enabled": true,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
     "editor.semanticHighlighting.enabled": true,
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
+    "editor.quickSuggestions": true,
     "search.exclude": {
         "**/.git": true,
         "**/node_modules": true,
@@ -42,12 +40,12 @@
     "files.enableTrash": false,
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
-    "workbench.activityBar.visible": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.activityBar.visible": false,
     "workbench.sideBar.location": "left",
-    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.renderIndentGuides": "none",
     "workbench.colorTheme": "Default Dark+",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.settings.enableNaturalLanguageSearch": false,
     "debug.console.fontFamily": "Jetbrains Mono",
     "debug.console.fontSize": 18,
     "terminal.integrated.fontFamily": "Jetbrains Mono",
@@ -56,7 +54,9 @@
     "breadcrumbs.enabled": false,
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
+    "window.title": "${}",
     "window.zoomLevel": 0,
+    "window.newWindowDimensions": "maximized",
     "extensions.ignoreRecommendations": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
@@ -92,14 +92,16 @@
     "go.goroot": "C:\\Program Files\\go",
     "go.lintOnSave": "off",
     "go.lintTool": "golint",
-    "go.lintFlags": [
-        "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""
-    ],
     "go.formatTool": "gofmt",
+    "go.buildOnSave": "off",
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
         "documentLink": true
+    },
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500,
     },
     "gopls": {
         "completeUnimported": true,
@@ -107,11 +109,12 @@
         "hoverKind": "SynopsisDocumentation"
     },
     "typescript.locale": "en",
-    "typescript.tsdk": "C:\\Users\\kevin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
+    "typescript.tsdk": "C:\\Users\\kebo\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
     "emmet.triggerExpansionOnTab": true,
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.includeLanguages": {
         "vue-html": "html",
+        "vue": "html",
         "razor": "html",
         "plaintext": "pug"
     },

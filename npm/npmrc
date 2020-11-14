@@ -1,0 +1,10 @@
+init-license=MIT
+init-author-email=isgopher@outlook.com
+init-author-name=kevin
+prefix=C:\Users\kebo\AppData\Roaming\npm
+cache=C:\Users\kebo\AppData\Roaming\npm-cache
+registry=https://registry.npm.taobao.org/
+electron_mirror=https://npm.taobao.org/mirrors/electron/
+phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+cache-min=100000

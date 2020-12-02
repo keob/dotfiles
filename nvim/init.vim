@@ -13,6 +13,7 @@ set splitright
 set number
 set autoread
 set autowrite
+set autowriteall
 set hidden
 " set cindent
 set autoindent
@@ -23,7 +24,7 @@ set shiftwidth=4
 set softtabstop=4
 set cursorline
 " set cursorcolumn
-" set colorcolumn=80
+set colorcolumn=100
 set textwidth=80
 " set relativenumber
 set lbr
@@ -38,6 +39,7 @@ set incsearch
 exec "nohlsearch"
 set ignorecase
 set smartcase
+set completeopt=menu,menuone
 set nobackup
 set nowritebackup
 set noswapfile
@@ -54,10 +56,10 @@ set wildmode=longest:list,full
 set wrap
 set linebreak
 set shortmess+=c
-set list
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
-"set listchars=tab:>-,trail:-
-"set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
+" set list
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
+" set listchars=tab:>-,trail:-
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 
 set lazyredraw
 set pumheight=10
@@ -79,7 +81,7 @@ set fileformats=unix,dos,mac
 set notimeout
 set ttimeout
 set ttimeoutlen=10
-set updatetime=300
+set updatetime=200
 
 if (empty($TMUX))
     if (has("nvim"))
@@ -198,7 +200,7 @@ call plug#end()
 " ====Airline====
 
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'powerline',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -420,25 +422,45 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " ====Go====
 
-let g:go_code_completion_enabled = 1
-let g:go_test_show_name = 0
+let g:go_code_completion_enabled = 0
+let g:go_test_show_name = 1
+let g:go_test_timeout = '10s'
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_template_autocreate = 0
+let g:go_template_use_pkg = 1
 let g:go_fmt_fail_silently = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls  =  1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:o_highlight_format_strings = 1
 let g:go_debug_windows = {
     \ 'vars':  'leftabove 35vnew',
     \ 'stack': 'botright 10new',
     \ }
+let g:go_highlight_debug = 1
 let g:go_test_prepend_name = 1
 let g:go_list_type = "quickfix"
 let g:go_auto_type_info = 0
+let g:go_doc_popup_window = 1
+let g:go_get_update = 0
+" let g:go_diagnostics_enabled = 1
+" let g:go_diagnostics_level = 2
+let g:go_gopls_deep_completion = 1
+let g:go_gopls_complete_unimported = 1
+let g:go_imports_autosave=1
+let g:go_gopls_options = []
 let g:go_auto_sameids = 0
-let g:go_null_module_warning = 0
-let g:go_echo_command_info = 1
 let g:go_autodetect_gopath = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_command = "golint"
+let g:go_metalinter_autosave_enabled = ['all']
+let g:go_metalinter_enabled = ['golint']
 let g:go_modifytags_transform = 'camelcase'
 
 

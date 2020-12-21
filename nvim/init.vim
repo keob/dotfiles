@@ -1,6 +1,4 @@
-" >>>=========Basic============
-
-colorscheme hybrid
+colorscheme gruvbox
 set background=dark
 syntax enable
 syntax on
@@ -15,7 +13,6 @@ set autoread
 set autowrite
 set autowriteall
 set hidden
-" set cindent
 set autoindent
 set expandtab
 set smartindent
@@ -23,9 +20,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set cursorline
-" set cursorcolumn
-set colorcolumn=100
 set textwidth=80
+set colorcolumn=100
+" set cursorcolumn
 " set relativenumber
 set lbr
 set fo+=mB
@@ -33,6 +30,7 @@ set scrolloff=5
 set laststatus=2
 set cmdheight=1
 set ruler
+set showtabline=0
 set showmatch
 set hlsearch
 set incsearch
@@ -77,35 +75,28 @@ filetype plugin indent on
 set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
-set fileformats=unix,dos,mac
+set fileformats=unix
 set notimeout
 set ttimeout
 set ttimeoutlen=10
 set updatetime=200
+set termguicolors
 
-if (empty($TMUX))
-    if (has("nvim"))
-        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    endif
-    if (has("termguicolors"))
-        set termguicolors
-    endif
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 if !has('gui_running')
     set t_Co=256
 endif
 
-" >>>=========Keymap============
 
-let mapleader=","
+let mapleader="\"
 
 noremap <leader>w :w<cr>
-" noremap <leader><leader>q :q!<cr>
+noremap <leader><leader>q :q!<cr>
 
 noremap <leader><cr> :nohlsearch<cr>
-
-map R :source $MYVIMRC<cr>
 
 noremap <leader><leader>i :PlugInstall<cr>
 noremap <leader><leader>u :PlugUpdate<cr>
@@ -114,8 +105,6 @@ noremap <leader><leader>c :PlugClean<cr>
 map <C-n> :cn<CR>
 map <C-m> :cp<CR>
 nnoremap <leader>a :cclose<CR>
-
-" ====Tab====
 
 map <leader>th :tabfirst<cr>
 map <leader>tl :tablast<cr>
@@ -141,8 +130,6 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-" ====Split Windows====
-
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -153,31 +140,22 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-" ====Buffer====
-
-nnoremap <leader>j :bn<CR>
-nnoremap <leader>k :bp<CR>
-nnoremap <leader><leader>d :bdelete<CR>
-
-" ====Line====
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bdelete<CR>
 
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-" ====indent====
-
 vnoremap < <gv
 vnoremap > >gv
-
-" ====Clipboard====
 
 vmap <Leader>c "+yy
 nmap <Leader>c "+yy
 nmap <Leader>v "+p
 
-" ====Plug====
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'mhinz/vim-startify'
@@ -188,19 +166,14 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 Plug 'Raimondi/delimitMate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 
-" ====Airline====
-
 let g:lightline = {
-    \ 'colorscheme': 'powerline',
+    \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -210,7 +183,6 @@ let g:lightline = {
     \ },
     \ }
 
-" ====Nerdtree====
 
 let g:NERDTreeWinSize = 32
 let g:NERDTreeDirArrowExpandable = '+'
@@ -222,19 +194,16 @@ let g:NERDTreeDirArrowCollapsible = '-'
 map <leader>g :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHidden=0 
-let NERDTreeIgnore = ['\.pyc$', '\.swp', '\.swo', '\.vscode',  'node_modules', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.vscode',  'node_modules', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-
-" ====ultisnips====
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " let g:UltiSnipsListSnippets="<c-l>"
 
-" ====Nerdcommenter====
 
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -245,33 +214,9 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
-" ====Startify====
 
 let g:startify_files_number = 20
-" let g:startify_custom_header = [
-            " \ '+----------------------------------+',
-            " \ '|                                  |',
-            " \ '| Talk is cheap. Show me the code. |',
-            " \ '|                                  |',
-            " \ '+--------------------+-------------+',
-            " \]
 
-" ====Gitgutter====
-
-nnoremap ]h :GitGutterNextHunk<cr>
-nnoremap [h :GitGutterPrevHunk<cr>
-function! MyStatusGitChanges() abort
-    let gutter = get(b:, 'gitgutter', {})
-    if empty(gutter) | return '' | endif
-    let summary = gutter['summary']
-    if summary[0] == 0 && summary[1] == 0 && summary[2] == 0
-        return ''
-    endif
-    return '  +'.summary[0].' ~'.summary[1].' -'.summary[2].' '
-endfunction
-
-
-" ====Coc====
 
 if has("patch-8.1.1564")
     set signcolumn=number
@@ -420,8 +365,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
-" ====Go====
-
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 let g:go_code_completion_enabled = 0
 let g:go_test_show_name = 1
 let g:go_test_timeout = '10s'
@@ -457,12 +402,9 @@ let g:go_imports_autosave=1
 let g:go_gopls_options = []
 let g:go_auto_sameids = 0
 let g:go_autodetect_gopath = 1
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_metalinter_command = "golint"
 let g:go_metalinter_autosave_enabled = ['all']
 let g:go_metalinter_enabled = ['golint']
 let g:go_modifytags_transform = 'camelcase'
-
-
-" ====Rust====
-let g:rustfmt_autosave = 1
+let g:go_def_mapping_enabled = 0

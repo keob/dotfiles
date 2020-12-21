@@ -91,7 +91,7 @@ if !has('gui_running')
 endif
 
 
-let mapleader="\"
+let mapleader=","
 
 noremap <leader>w :w<cr>
 noremap <leader><leader>q :q!<cr>

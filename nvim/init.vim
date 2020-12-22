@@ -13,15 +13,15 @@ set autoread
 set autowrite
 set autowriteall
 set hidden
-set autoindent
 set expandtab
+set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set cursorline
 set textwidth=80
-" set colorcolumn=100
+set colorcolumn=101
+set cursorline
 " set cursorcolumn
 " set relativenumber
 set lbr
@@ -49,14 +49,15 @@ set novisualbell
 set noerrorbells
 set history=1000
 set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
 set wildmenu
 set wildmode=longest:list,full
 set wrap
 set linebreak
 set shortmess+=c
-" set list
-" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
-" set listchars=tab:>-,trail:-
+set list
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 
 set lazyredraw
@@ -76,11 +77,16 @@ set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set fileformats=unix
+set formatoptions+=mM
 set notimeout
 set ttimeout
 set ttimeoutlen=10
 set updatetime=200
 set termguicolors
+
+if has("autocmd")  
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -152,9 +158,9 @@ cnoremap <C-e> <End>
 vnoremap < <gv
 vnoremap > >gv
 
-vmap <Leader>c "+yy
-nmap <Leader>c "+yy
-nmap <Leader>v "+p
+vmap <leader>c "+yy
+nmap <leader>c "+yy
+nmap <leader>v "+p
 
 
 call plug#begin('~/.config/nvim/plugged')
@@ -162,6 +168,7 @@ Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'cohama/agit.vim'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'honza/vim-snippets'
@@ -182,19 +189,21 @@ let g:lightline = {
     \ }
 
 
-let g:NERDTreeWinSize = 32
+let g:NERDTreeWinSize = 28
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 " let g:NERDTreeDirArrowExpandable = '▸'
 " let g:NERDTreeDirArrowCollapsible = '▾'
 " let NERDTreeDirArrowExpandable = '▷'
 " let NERDTreeDirArrowCollapsible = '▼'
-map <leader>g :NERDTreeToggle<CR>
+map <leader>fg :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeHidden=0 
+let g:NERDTreeHidden=1
 let NERDTreeIgnore = ['\.pyc$', '\.vscode',  'node_modules', '__pycache__']
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+let NERDTreeMinimalMenu = 1
+let NERDTreeShowHidden = 1
+let NERDTreeHighlightCursorline = 1
 
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -222,11 +231,14 @@ let g:gitgutter_sign_modified = '░'
 let g:gitgutter_sign_removed = '▏'
 let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
-nnoremap <LEADER>gf :GitGutterFold<CR>
-nnoremap H :GitGutterPreviewHunk<CR>
-nnoremap <LEADER>g[ :GitGutterPrevHunk<CR>
-nnoremap <LEADER>g] :GitGutterNextHunk<CR>
+nnoremap <leader>gf :GitGutterFold<CR>
+nnoremap <leader>h :GitGutterPreviewHunk<CR>
+nnoremap <leader>hm :GitGutterPrevHunk<CR>
+nnoremap <leader>hn :GitGutterNextHunk<CR>
 
+nnoremap <leader>gl :Agit<CR>
+nnoremap <leader>gf :AgitFile<CR>
+let g:agit_no_default_mappings = 1
 
 let g:startify_files_number = 20
 
@@ -238,9 +250,9 @@ else
 endif
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort

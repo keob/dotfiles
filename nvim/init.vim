@@ -393,3 +393,6 @@ let g:go_metalinter_autosave_enabled = ['all']
 let g:go_metalinter_enabled = ['golint']
 let g:go_modifytags_transform = 'camelcase'
 let g:go_def_mapping_enabled = 0
+
+
+let g:rustfmt_autosave = 1

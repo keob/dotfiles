@@ -15,17 +15,19 @@
 	ci = commit
 	amend = commit --amend -m
 	aa = add -A .
-	st = status
+	st = status -sb
 	br = branch -v
 	fo = fetch origin
 	fu = fetch upstream
 	po = push origin
-	unstage = reset HEAD
+	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
 	contributors = shortlog --summary --numbered
+	lo = log --oneline
+	last = log -1 HEAD
 	logg = log --graph --decorate --all
 	dog = log --all --decorate --oneline --graph
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate

@@ -12,15 +12,13 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias mkdir='mkdir -pv'
+alias mkdir='mkdir -p'
 
 alias j='jobs -l'
-alias r='ranger'
 alias meminfo='free -h -m -l -t'
 alias path='echo -e ${PATH//:/\\n}'
 alias ports='netstat -tulanp'
 alias df='df -h'
-alias wget='wget -c'
 alias ga='git add'
 alias gaa='git add .'
 alias gst='git status'
@@ -37,11 +35,3 @@ alias venv='source $HOME/venv/basic/bin/activate'
 alias pro='cd $HOME/Projects'
 alias dl='cd $HOME/Downloads'
 alias doc='cd $HOME/Documents'
-
-alias reboot='/sbin/reboot'
-alias poweroff='/sbin/poweroff'
-alias shutdown='/sbin/shutdown'
-
-wifi() {
-    wpa_supplicant -c $1 -i wlp1s0
-}

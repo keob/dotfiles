@@ -19,11 +19,11 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set textwidth=80
-set colorcolumn=101
 set cursorline
 " set cursorcolumn
 " set relativenumber
+" set colorcolumn=101
+set textwidth=80
 set lbr
 set fo+=mB
 set scrolloff=5
@@ -54,9 +54,9 @@ set wildmenu
 set wildmode=longest:list,full
 set wrap
 set linebreak
-set shortmess+=c
-set list
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
+set shortmess+=cI
+" set list
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 
@@ -84,7 +84,7 @@ set ttimeoutlen=10
 set updatetime=200
 set termguicolors
 
-if has("autocmd")  
+if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
@@ -99,8 +99,8 @@ endif
 
 let mapleader=","
 
-noremap <leader>w :w<cr>
-noremap <leader><leader>q :q!<cr>
+nmap <leader>w :w<cr>
+nmap <leader><leader>q :q!<cr>
 
 noremap <leader><cr> :nohlsearch<cr>
 
@@ -108,9 +108,9 @@ noremap <leader><leader>i :PlugInstall<cr>
 noremap <leader><leader>u :PlugUpdate<cr>
 noremap <leader><leader>c :PlugClean<cr>
 
-map <C-n> :cn<CR>
-map <C-m> :cp<CR>
-nnoremap <leader>a :cclose<CR>
+map <C-n> :cn<cr>
+map <C-m> :cp<cr>
+nnoremap <leader>a :cclose<cr>
 
 map <leader>th :tabfirst<cr>
 map <leader>tl :tablast<cr>
@@ -122,8 +122,7 @@ map <leader>te :tabedit<cr>
 map <leader>td :tabclose<cr>
 map <leader>tm :tabm<cr>
 
-nnoremap <leader>tt :tabnew<CR>
-inoremap <leader>tt <Esc>:tabnew<CR>
+nnoremap <leader>tt :tabnew<cr>
 
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -136,35 +135,20 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
-
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bd :bdelete<CR>
-
-cnoremap <C-j> <t_kd>
-cnoremap <C-k> <t_ku>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bd :bdelete<cr>
 
 vnoremap < <gv
 vnoremap > >gv
 
-vmap <leader>c "+yy
-nmap <leader>c "+yy
-nmap <leader>v "+p
-
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -184,25 +168,25 @@ let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \   },
+    \           [ 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
     \ }
 
-
-let g:NERDTreeWinSize = 28
+let g:NERDTreeWinSize = 30
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 " let g:NERDTreeDirArrowExpandable = '▸'
 " let g:NERDTreeDirArrowCollapsible = '▾'
 " let NERDTreeDirArrowExpandable = '▷'
 " let NERDTreeDirArrowCollapsible = '▼'
-map <leader>fg :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <leader>\\ :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHidden=1
 let NERDTreeIgnore = ['\.pyc$', '\.vscode',  'node_modules', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeMinimalMenu = 1
-let NERDTreeShowHidden = 1
+let NERDTreeShowHidden = 0
 let NERDTreeHighlightCursorline = 1
 
 
@@ -231,16 +215,13 @@ let g:gitgutter_sign_modified = '░'
 let g:gitgutter_sign_removed = '▏'
 let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
-nnoremap <leader>gf :GitGutterFold<CR>
-nnoremap <leader>h :GitGutterPreviewHunk<CR>
-nnoremap <leader>hm :GitGutterPrevHunk<CR>
-nnoremap <leader>hn :GitGutterNextHunk<CR>
+nnoremap H :GitGutterPreviewHunk<cr>
+nnoremap <leader>hm :GitGutterPrevHunk<cr>
+nnoremap <leader>hn :GitGutterNextHunk<cr>
 
-nnoremap <leader>gl :Agit<CR>
-nnoremap <leader>gf :AgitFile<CR>
+nnoremap <leader>gl :Agit<cr>
+nnoremap <leader>gf :AgitFile<cr>
 let g:agit_no_default_mappings = 1
-
-let g:startify_files_number = 20
 
 
 if has("patch-8.1.1564")
@@ -260,17 +241,13 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-else
-    inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>+ <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>- <Plug>(coc-diagnostic-prev)
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -291,29 +268,7 @@ endfunction
 
 nmap <leader>rn <Plug>(coc-rename)
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-    autocmd!
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
 
 if has('nvim-0.4.0') || has('patch-8.2.0750')
     nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
@@ -324,30 +279,17 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-if has('nvim')
-  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
-  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
-endif
-
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
-command! -nargs=0 Format :call CocAction('format')
-
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
+vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
 
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<cr>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<cr>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
 
 
 let g:go_def_mode='gopls'

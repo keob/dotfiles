@@ -1,7 +1,8 @@
 {
-  "coc.preferences.hoverTarget": "preview",
+  "coc.preferences.hoverTarget": "float",
   "coc.preferences.enableFloatHighlight": true,
-  "codeLens.enable": true,
+  "codeLens.enable": false,
+  "suggest.detailField": "float",
   "suggest.detailMaxLength": 60,
   "suggest.enablePreview": true,
   "suggest.noselect": false,
@@ -9,6 +10,9 @@
   "suggest.floatEnable": true,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.timeout": 5000,
+  "suggest.disableKind": true,
+  "suggest.disableMenu": true,
+  "diagnostic.signOffset": 1,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.maxWindowHeight": 20,
   "diagnostic.errorSign": "✖",
@@ -18,9 +22,12 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
+      "filetypes": ["go"],
       "rootPatterns": ["go.mod"],
-      "disableWorkspaceFolders": true,
-      "filetypes": ["go"]
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true
+      }
     },
     "rust": {
       "command": "rls",

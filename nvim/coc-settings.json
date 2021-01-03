@@ -2,6 +2,8 @@
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.enableFloatHighlight": true,
   "codeLens.enable": false,
+  "suggest.disableKind": true,
+  "suggest.disableMenu": true,
   "suggest.detailField": "float",
   "suggest.detailMaxLength": 60,
   "suggest.enablePreview": true,
@@ -19,14 +21,14 @@
   "diagnostic.warningSign": "»",
   "diagnostic.infoSign": "@",
   "diagnostic.hintSign": "*",
+  "diagnostic.refreshOnInsertMode": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
       "filetypes": ["go"],
       "rootPatterns": ["go.mod"],
       "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true
+        "usePlaceholders": true
       }
     },
     "rust": {

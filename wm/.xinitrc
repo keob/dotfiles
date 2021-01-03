@@ -1,19 +1,16 @@
+#!/bin/sh
+
+get_date(){
+    date '+%m-%d %H:%M %a'
+}
+
+get_bat(){
+    echo $(acpi -b | awk '{ print $4 }' | tr -d ',')
+}
+
 while true; do
-        batt=$(LC_ALL=C acpi -b)
-
-        case $batt in
-        *Discharging*)
-                batt=" ${batt#* * * } "
-                batt=" ${batt%%, *} "
-                ;;
-        *)
-                batt=""
-                ;;
-        esac
-
-        xsetroot -name "$batt $(date +%R) "
-
-        sleep 60
+    xsetroot -name " $(get_bat) $(get_date) "
+    sleep 60
 done &
 
 xset r rate 200 30

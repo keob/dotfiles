@@ -19,25 +19,28 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set cursorline
+" set cursorline
 " set cursorcolumn
 " set relativenumber
 " set colorcolumn=101
-set textwidth=80
+set textwidth=100
+set nofoldenable
+set foldmethod=syntax
 set lbr
-set fo+=mB
-set scrolloff=5
+set fo+=mM
 set laststatus=2
 set cmdheight=1
 set ruler
 set showtabline=0
 set showmatch
+set completeopt=menuone,menu,preview
+set complete=.,w,b,u,t,i,d
+set infercase
 set hlsearch
 set incsearch
 exec "nohlsearch"
 set ignorecase
 set smartcase
-set completeopt=menu,menuone
 set nobackup
 set nowritebackup
 set noswapfile
@@ -49,14 +52,14 @@ set novisualbell
 set noerrorbells
 set history=1000
 set backspace=indent,eol,start
-set whichwrap+=<,>,h,l
+" set whichwrap+=<,>,h,l
 set wildmenu
 set wildmode=longest:list,full
 set wrap
 set linebreak
-set shortmess+=cI
-" set list
-" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
+set shortmess+=aoOWtcI
+set list
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 
@@ -77,7 +80,6 @@ set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set fileformats=unix
-set formatoptions+=mM
 set notimeout
 set ttimeout
 set ttimeoutlen=10
@@ -102,7 +104,7 @@ let mapleader=","
 nmap <leader>w :w<cr>
 nmap <leader><leader>q :q!<cr>
 
-noremap <leader><cr> :nohlsearch<cr>
+noremap <silent><leader><cr> :nohlsearch<cr>
 
 noremap <leader><leader>i :PlugInstall<cr>
 noremap <leader><leader>u :PlugUpdate<cr>
@@ -123,17 +125,6 @@ map <leader>td :tabclose<cr>
 map <leader>tm :tabm<cr>
 
 nnoremap <leader>tt :tabnew<cr>
-
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
 
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -160,7 +151,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Raimondi/delimitMate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 
@@ -173,16 +163,12 @@ let g:lightline = {
     \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
     \ }
 
+
 let g:NERDTreeWinSize = 30
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-" let g:NERDTreeDirArrowExpandable = '▸'
-" let g:NERDTreeDirArrowCollapsible = '▾'
-" let NERDTreeDirArrowExpandable = '▷'
-" let NERDTreeDirArrowCollapsible = '▼'
-map <leader>\\ :NERDTreeToggle<CR>
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeHidden=1
+let g:NERDTreeDirArrowExpandable = ' ▸'
+let g:NERDTreeDirArrowCollapsible = ' ▾'
+map <silent><leader><leader>t :NERDTreeToggle<CR>
+let g:NERDTreeHidden = 1
 let NERDTreeIgnore = ['\.pyc$', '\.vscode',  'node_modules', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeMinimalMenu = 1
@@ -190,10 +176,10 @@ let NERDTreeShowHidden = 0
 let NERDTreeHighlightCursorline = 1
 
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsListSnippets = "<c-l>"
 
 
 let g:NERDSpaceDelims = 1
@@ -215,9 +201,9 @@ let g:gitgutter_sign_modified = '░'
 let g:gitgutter_sign_removed = '▏'
 let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
-nnoremap H :GitGutterPreviewHunk<cr>
 nnoremap <leader>hm :GitGutterPrevHunk<cr>
 nnoremap <leader>hn :GitGutterNextHunk<cr>
+
 
 nnoremap <leader>gl :Agit<cr>
 nnoremap <leader>gf :AgitFile<cr>
@@ -335,6 +321,3 @@ let g:go_metalinter_autosave_enabled = ['all']
 let g:go_metalinter_enabled = ['golint']
 let g:go_modifytags_transform = 'camelcase'
 let g:go_def_mapping_enabled = 0
-
-
-let g:rustfmt_autosave = 1

@@ -27,14 +27,14 @@
       "command": "gopls",
       "filetypes": ["go"],
       "rootPatterns": ["go.mod"],
-      "initializationOptions": {
-        "usePlaceholders": true
+      "settings": {
+        "gopls": {
+          "deepCompletion": true,
+          "usePlaceholders": true,
+          "completeUnimported": true,
+          "completionDocumentation": true
+        }
       }
-    },
-    "rust": {
-      "command": "rls",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml"]
     }
   }
 }

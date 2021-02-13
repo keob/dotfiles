@@ -1,9 +1,9 @@
 # Alias
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cls='clear'
 alias vi='nvim'
 alias vim='nvim'
-alias cls='clear'
 alias md='mkdir -p'
 alias ll='ls -l'
 alias la='ls -a'

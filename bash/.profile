@@ -2,9 +2,6 @@
 # ~/.profile
 #
 
-# Tools
-export TOOLS=$HOME/Tools
-
 # Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -15,4 +12,4 @@ export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
 export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 
 # Environment
-export PATH=$TOOLS:$GOBIN:$GOROOT/bin:$HOME/.cargo/bin:$PATH
+export PATH=$PATH:$GOROOT/bin:$GOBIN:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.npm/bin

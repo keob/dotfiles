@@ -1,6 +1,6 @@
 [user]
-	name = keob
-	email = isgopher@outlook.com
+	name = kebo
+	email = kebo2021@qq.com
 [color]
 	branch = always
 	status = always
@@ -8,6 +8,15 @@
 	log = always
 	grep = always
 	interactive = always
+[core]
+	autocrlf = input
+	safecrlf = true
+[diff]
+	algorithm = patience
+[protocol]
+	version = 2
+[merge]
+	tool = nvim -d
 [alias]
 	co = checkout
 	cob = checkout -b
@@ -28,11 +37,6 @@
 	contributors = shortlog --summary --numbered
 	logg = log --graph --decorate --all
 	dog = log --all --decorate --oneline --graph
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	la = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lt = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lo = log --oneline
 	last = log -1 HEAD
-[credential]
-	helper = store

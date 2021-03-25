@@ -13,8 +13,9 @@ PS1='${arch_chroot:+($arch_chroot)}\[\033[01;32m\]\u@\[\033[01;36m\]\h:\[\033[01
 
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILE=~/.bash_history
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 export HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 shopt -s cmdhist
+shopt -s lithist

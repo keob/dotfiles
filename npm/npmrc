@@ -1,6 +1,8 @@
 init-license=MIT
-init-author-email=isgopher@outlook.com
-init-author-name=kevin
+init-author-email=kebo2021@qq.com
+init-author-name=kebo
+prefix=~/.npm
+cache=~/.npm/cache
 registry=https://registry.npm.taobao.org/
 electron_mirror=https://npm.taobao.org/mirrors/electron/
 phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/

@@ -25,11 +25,11 @@ mouse:
 
   url:
     launcher:
-        program: chromium
+      program: chromium
 
 colors:
   primary:
-    background: '0x1a1b26'
+    background: '0x24283b'
     foreground: '0xa9b1d6'
 
   normal:
@@ -51,3 +51,6 @@ colors:
     magenta: '0xbb9af7'
     cyan:    '0x0db9d7'
     white:   '0xacb0d0'
+
+key_bindings:
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }

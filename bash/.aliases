@@ -1,34 +1,40 @@
-# Alias
-alias ..='cd ..'
-alias ...='cd ../..'
-alias cls='clear'
-alias vi='nvim'
-alias vim='nvim'
-alias md='mkdir -p'
-alias ll='ls -Al'
-alias la='ls -A'
-alias lh='ls -lh'
-alias lth='ls -Alth'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+#!/bin/bash
 
-alias j='jobs -l'
-alias meminfo='free -h -m -l -t'
-alias path='echo -e ${PATH//:/\\n}'
-alias df='df -h'
-alias gaa='git add -A'
-alias gst='git status -sb'
-alias gcm='git commit -m'
-alias gco='git checkout'
-alias gph='git push'
-alias gpl='git pull'
-alias tn='tmux new -s'
+#
+# ~/.aliases
+#
 
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
-alias pro='cd $HOME/Projects'
-alias dl='cd $HOME/Downloads'
-alias doc='cd $HOME/Documents'
+alias cls="clear"
+alias md="mkdir -p"
+alias ll="ls -Al"
+alias la="ls -A"
+alias lh="ls -lh"
+alias lth="ls -Alth"
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+alias j="jobs -l"
+alias pg="pgrep -lf"
+alias meminfo="free -h -m -l -t"
+alias path="echo -e ${PATH//:/\\n}"
+alias gaa="git add -A"
+alias gst="git status -sb"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gph="git push"
+alias gpl="git pull"
+alias tn="tmux new -s"
+
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
+
+alias pro="cd $HOME/Projects"
+alias dl="cd $HOME/Downloads"
+alias doc="cd $HOME/Documents"

@@ -5,9 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if test -f ~/.aliases ; then
-    . ~/.aliases
-fi
+[[ -f ~/.aliases ]] && . ~/.aliases
+[[ -f ~/.functions ]] && . ~/.functions
 
 PS1='${arch_chroot:+($arch_chroot)}\[\033[01;32m\]\u@\[\033[01;36m\]\h:\[\033[01;33m\]\W\[\033[00m\]\$ '
 

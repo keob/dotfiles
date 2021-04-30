@@ -11,6 +11,11 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+	pager = 
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
 [diff]
 	algorithm = patience
 [protocol]

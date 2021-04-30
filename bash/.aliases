@@ -23,7 +23,7 @@ alias fgrep="fgrep --color=auto"
 alias j="jobs -l"
 alias pg="pgrep -lf"
 alias meminfo="free -h -m -l -t"
-alias path="echo -e ${PATH//:/\\n}"
+alias path='echo -e ${PATH//:/\\n}'
 alias gaa="git add -A"
 alias gst="git status -sb"
 alias gcm="git commit -m"
@@ -34,7 +34,3 @@ alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
-
-alias pro="cd $HOME/Projects"
-alias dl="cd $HOME/Downloads"
-alias doc="cd $HOME/Documents"

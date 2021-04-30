@@ -5,6 +5,19 @@ r = "run"
 br = "build --release"
 rr = "run --release"
 
+[profile.release]
+lto = true
+opt-level = 'z'
+codegen-units = 1
+incremental = true
+
+
+[profile.bench]
+lto = true
+opt-level = 'z'
+codegen-units = 1
+incremental = true
+
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = "ustc"
@@ -17,6 +30,3 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
-
-[source.rustcc]
-registry = "git://crates.rustcc.com/crates.io-index"

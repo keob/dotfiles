@@ -18,3 +18,6 @@ export HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 shopt -s cmdhist
 shopt -s lithist
+
+# GPG
+export GPG_TTY=$(tty)

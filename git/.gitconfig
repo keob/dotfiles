@@ -11,15 +11,14 @@
 [core]
 	autocrlf = input
 	safecrlf = true
-	pager = 
+	pager = less
+	quotePath = false
 [commit]
 	gpgSign = true
 [tag]
 	gpgSign = true
 [diff]
 	algorithm = patience
-[protocol]
-	version = 2
 [merge]
 	tool = nvim -d
 [alias]

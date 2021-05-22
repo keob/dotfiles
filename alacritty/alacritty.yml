@@ -23,10 +23,6 @@ font:
 mouse:
   hide_when_typing: true
 
-  url:
-    launcher:
-      program: firefox
-
 colors:
   primary:
     background:        '#282828'

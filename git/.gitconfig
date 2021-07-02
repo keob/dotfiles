@@ -1,18 +1,16 @@
 [user]
 	name = kebo
 	email = kebo2021@qq.com
+	signingKey = D435A64FB6145224
 [color]
-	branch = always
-	status = always
-	diff = always
-	log = always
-	grep = always
-	interactive = always
-[core]
-	autocrlf = input
-	safecrlf = true
-	pager = less
-	quotePath = false
+	branch = auto
+	status = auto
+	diff = auto
+	log = auto
+	grep = auto
+	interactive = auto
+[push]
+	default = simple
 [commit]
 	gpgSign = true
 [tag]
@@ -25,7 +23,6 @@
 	co = checkout
 	cob = checkout -b
 	cm = commit -m
-	ci = commit
 	amend = commit --amend -m
 	aa = add -A
 	st = status -sb

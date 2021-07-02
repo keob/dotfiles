@@ -2,20 +2,25 @@
 b = "build"
 c = "check"
 r = "run"
+t = "test"
 br = "build --release"
+rq = "run -q"
 rr = "run --release"
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
+incremental = true
 
 [profile.release]
 lto = true
 opt-level = 'z'
-codegen-units = 1
+codegen-units = 8
 incremental = true
-
 
 [profile.bench]
 lto = true
 opt-level = 'z'
-codegen-units = 1
+codegen-units = 8
 incremental = true
 
 [source.crates-io]
@@ -26,7 +31,7 @@ replace-with = "ustc"
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 
 [source.ustc]
-registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"

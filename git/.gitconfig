@@ -30,7 +30,7 @@
 	fo = fetch origin
 	fu = fetch upstream
 	po = push origin
-	unstage = reset HEAD --
+	unstage = reset HEAD^
 	uncommit = reset --soft HEAD^
 	tags = tag -l
 	branches = branch -a

@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	safecrlf = true
+	autocrlf = input
+	pager = more
+[pull]
+	rebase = false
+[push]
+	default = simple
+	followTags = true
+[fetch]
+	prune = true
+[http]
+	postBuffer = 524288000

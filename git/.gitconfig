@@ -1,0 +1,37 @@
+[user]
+	name = kebo
+	email = kebo2021@qq.com
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	log = auto
+	grep = auto
+	interactive = auto
+	showBranch = auto
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[merge]
+	tool = nvim -d
+[alias]
+	new = checkout -b
+	cm = commit -m
+	amend = commit --amend -m
+	aa = add -A
+	st = status -sb
+	br = branch -v
+	fo = fetch origin
+	fu = fetch upstream
+	po = push origin
+	unstage = reset HEAD^
+	uncommit = reset --soft HEAD^
+	branches = branch -a
+	remotes = remote -v
+	contributors = shortlog --summary --numbered
+	logg = log --graph --decorate --all
+	dog = log --all --decorate --oneline --graph
+	lt = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lo = log --oneline
+	last = log -1 HEAD

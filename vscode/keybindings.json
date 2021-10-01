@@ -1,0 +1,68 @@
+[
+    {
+        "key": "ctrl+alt+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+k ctrl+n",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+b",
+        "command": "breadcrumbs.toggle"
+    },
+    {
+        "key": "ctrl+m ctrl+i",
+        "command": "editor.action.toggleMinimap"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.joinLines"
+    },
+    {
+        "key": "alt+o",
+        "command": "extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+o",
+        "command": "-extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "extension.liveServer.goOffline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+c",
+        "command": "-extension.liveServer.goOffline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "workbench.action.splitEditorRight"
+    }
+]

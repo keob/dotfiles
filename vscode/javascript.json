@@ -1,0 +1,100 @@
+{
+    "Console Log": {
+        "prefix": "cl",
+        "body": [
+            "console.log($0);"
+        ]
+    },
+    "Console Error": {
+        "prefix": "ce",
+        "body": [
+            "console.error($0);"
+        ]
+    },
+    "Console Clear": {
+        "prefix": "cc",
+        "body": [
+            "console.clear();"
+        ]
+    },
+    "Destructure": {
+        "prefix": "d",
+        "body": [
+            "const { $1 } = $0"
+        ]
+    },
+    "Try/Catch": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "  $1",
+            "} catch (err) {",
+            "  $0",
+            "}"
+        ]
+    },
+    "To-Do": {
+        "prefix": "todo",
+        "body": [
+            "// TODO: $1"
+        ]
+    },
+    "Comment": {
+        "prefix": "c",
+        "body": [
+            "/**",
+            " * $1.",
+            " */"
+        ]
+    },
+    "Function Without Comment": {
+        "prefix": "fc",
+        "body": [
+            "/**",
+            " * $1 $2.",
+            " */",
+            "",
+            "function $1($3) {",
+            "  $0",
+            "}"
+        ]
+    },
+    "Function": {
+        "prefix": "f",
+        "body": [
+            "function $1($2) {",
+            "  $0",
+            "}"
+        ]
+    },
+    "Import": {
+        "prefix": "i",
+        "body": [
+            "import $1 from '${2:$1}'"
+        ]
+    },
+    "Import Component": {
+        "prefix": "ic",
+        "body": [
+            "import $1 from './$1'"
+        ]
+    },
+    "Export Default": {
+        "prefix": "ed",
+        "body": [
+            "export default "
+        ]
+    },
+    "Export Default Function": {
+        "prefix": "edf",
+        "body": [
+            "/**",
+            " * $1 $2.",
+            " */",
+            "",
+            "export default function $1($3) {",
+            "  $0",
+            "}"
+        ]
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "editor.fontFamily": "Fira Code,JetBrains Mono,Consolas,Microsoft Yahei",
+    "editor.fontSize": 18,
+    "editor.detectIndentation": true,
+    "editor.renderIndentGuides": false,
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.smoothScrolling": true,
+    "editor.lineNumbers": "on",
+    "editor.snippetSuggestions": "inline",
+    "editor.suggest.showSnippets": true,
+    "editor.renderWhitespace": "selection",
+    "editor.wordWrap": "on",
+    "explorer.compactFolders": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.links": false,
+    "editor.minimap.enabled": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.parameterHints.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.quickSuggestions": true,
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true
+    },
+    "files.enableTrash": false,
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "left",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.colorTheme": "Default Dark+",
+    "debug.console.fontFamily": "Jetbrains Mono",
+    "debug.console.fontSize": 18,
+    "terminal.integrated.fontFamily": "Jetbrains Mono",
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "breadcrumbs.enabled": false,
+    "zenMode.centerLayout": false,
+    "zenMode.hideLineNumbers": false,
+    "window.title": "${}",
+    "window.zoomLevel": 0,
+    "window.newWindowDimensions": "maximized",
+    "extensions.ignoreRecommendations": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2
+    },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "go.gopath": "C:\\go",
+    "go.goroot": "C:\\Program Files\\go",
+    "go.lintOnSave": "off",
+    "go.lintTool": "golint",
+    "go.formatTool": "gofmt",
+    "go.buildOnSave": "off",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    },
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500,
+    },
+    "gopls": {
+        "completeUnimported": true,
+        "usePlaceholders": true,
+        "hoverKind": "SynopsisDocumentation"
+    },
+    "typescript.locale": "en",
+    "typescript.tsdk": "C:\\Users\\kebo\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "razor": "html",
+        "plaintext": "pug"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.NoBrowser": true
+}

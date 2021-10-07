@@ -18,9 +18,19 @@ export RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup
 
 # LESS
-export LESS="-SRXF"
+export LESS="-FRS"
 
 # PATH
 typeset -U PATH path
-path=("$path[@]" $GOROOT/bin $GOBIN $CARGO_HOME/bin $HOME/.local/bin $HOME/Develop/npm/bin $PYTHONUSERBASE/bin)
+
+path=(
+    $path
+    $GOBIN
+    $GOROOT/bin
+    $CARGO_HOME/bin
+    $HOME/.local/bin
+    $PYTHONUSERBASE/bin
+    $HOME/Develop/npm/bin
+)
+
 export PATH

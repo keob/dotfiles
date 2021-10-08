@@ -2,8 +2,11 @@
 # ~/.profile
 #
 
+# EDITOR
+export EDITOR=nano
+
 # Go
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
@@ -22,4 +25,4 @@ export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 # PATH
-export PATH=$PATH:$GOBIN:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/Develop/npm/bin:$PYTHONUSERBASE/bin
+export PATH=$PATH:$GOROOT/bin:$GOBIN:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/Develop/npm/bin:$PYTHONUSERBASE/bin

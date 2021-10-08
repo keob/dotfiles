@@ -13,6 +13,9 @@ set mark-symlinked-directories on
 
 $if mode=emacs
 
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
 # for linux console and RH/Debian xterm
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line

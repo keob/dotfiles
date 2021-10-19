@@ -3,7 +3,10 @@
 #
 
 # EDITOR
-export EDITOR=nano
+export EDITOR=nvim
+
+# LESS
+export LESS="-SRXF"
 
 # Go
 export GOROOT=/usr/local/go

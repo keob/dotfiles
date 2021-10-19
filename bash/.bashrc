@@ -6,9 +6,8 @@
 [[ $- != *i* ]] && return
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-[[ -f ~/.bash_functions ]] && . ~/.bash_functions
 
-PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;33m\]\W\[\033[00m\]\$ '
+PS1='\[\033[01;32m\][\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;33m\]\W\[\033[01;32m\]]\[\033[00m\]\$ '
 
 export HISTIGNORE="clear:ls:la:lth:lh:ll:bg:fg:cd:cd -:cd ..:..*:exit:date:* --help:htop:top:path:env:printenv:startx"
 export HISTCONTROL=ignoreboth:erasedups

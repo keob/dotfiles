@@ -28,3 +28,11 @@ alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+
+fs() {
+    du -sh ${1} | awk '{print $1}'
+}
+
+batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}

@@ -12,5 +12,7 @@
 	followTags = true
 [fetch]
 	prune = true
+[diff]
+	algorithm = patience
 [http]
 	postBuffer = 524288000

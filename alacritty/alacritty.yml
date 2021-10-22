@@ -30,8 +30,8 @@ colors:
   primary:
     background:        '#282828'
     foreground:        '#ebdbb2'
-    bright_foreground: '#fbf1c7'
     dim_foreground:    '#a89984'
+    bright_foreground: '#fbf1c7'
 
   cursor:
     text:   '#282828'
@@ -48,20 +48,17 @@ colors:
     focused_match:
      foreground: '#282828'
      background: '#ebdbb2'
+    bar:
+      background: '#282828'
+      foreground: '#ebdbb2'
+
+  line_indicator:
+    foreground: None
+    background: None
 
   selection:
     text:       '#282828'
     background: '#ebdbb2'
-
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
 
   normal:
     black:   '#282828'
@@ -72,6 +69,16 @@ colors:
     magenta: '#b16286'
     cyan:    '#689d6a'
     white:   '#a89984'
+
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
   dim:
     black:   '#32302f'
@@ -90,6 +97,5 @@ key_bindings:
   - { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
   - { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
-  - { key: R,              mods: Control,                         action: ResetFontSize    }
   - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
   - { key: Minus,          mods: Control,                         action: DecreaseFontSize }

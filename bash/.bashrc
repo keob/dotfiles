@@ -7,9 +7,9 @@
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
-PS1='\[\033[01;32m\][\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;33m\]\W\[\033[01;32m\]]\[\033[00m\]\$ '
+PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h \[\033[01;33m\]\W\[\033[00m\]\$ '
 
-export HISTIGNORE="clear:ls:la:lth:lh:ll:bg:fg:cd:cd -:cd ..:..*:exit:date:* --help:htop:top:path:env:printenv:startx"
+export HISTIGNORE="clear:ls:la:lth:lh:ll:bg:fg:cd:cd -:cd ..:..*:exit:date:* --help:btop:htop:top:path:env:printenv:startx"
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILE=~/.bash_history
 export HISTSIZE=10000

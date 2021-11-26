@@ -8,6 +8,9 @@ export EDITOR=nvim
 # LESS
 export LESS="-SRXF"
 
+# TERM
+export TERM="xterm-256color"
+
 # Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -17,6 +20,7 @@ export GOBIN=$GOPATH/bin
 export CARGO_HOME=$HOME/.cargo
 
 # Python
+export PYTHONDONTWRITEBYTECODE=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONUSERBASE=$HOME/Develop/python
 

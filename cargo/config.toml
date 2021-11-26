@@ -10,25 +10,21 @@ rr = "run --release"
 
 [build]
 rustflags = ["-C", "target-cpu=native"]
-incremental = true
 
 [profile.release]
 lto = true
-opt-level = 'z'
-codegen-units = 8
-incremental = true
 
 [profile.bench]
 lto = true
-opt-level = 'z'
-codegen-units = 8
-incremental = true
 
 [source.crates-io]
 replace-with = "ustc"
 
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
 [source.tuna]
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 
-[source.ustc]
-registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+[source.sjtu]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"

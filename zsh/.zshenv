@@ -1,3 +1,12 @@
+# EDITOR
+export EDITOR=nvim
+
+# LESS
+export LESS="-SRXF"
+
+# TERM
+export TERM="xterm-256color"
+
 # Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -7,6 +16,7 @@ export GOBIN=$GOPATH/bin
 export CARGO_HOME=$HOME/.cargo
 
 # Python
+export PYTHONDONTWRITEBYTECODE=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONUSERBASE=$HOME/Develop/python
 
@@ -14,19 +24,15 @@ export PYTHONUSERBASE=$HOME/Develop/python
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgreprc
 
 # Mirrors
-export RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup
-
-# LESS
-export LESS="-FRS"
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 # PATH
 typeset -U PATH path
 
-path=(
-    $path
-    $GOBIN
+path+=(
     $GOROOT/bin
+    $GOBIN
     $CARGO_HOME/bin
     $HOME/.local/bin
     $PYTHONUSERBASE/bin

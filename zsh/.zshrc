@@ -1,55 +1,51 @@
-unlimit
-limit stack 8192
-limit core 0
-limit -s
+fpath=(
+    $ZDOTDIR/comp
+    $fpath
+)
 
-fpath=($fpath ~/.zfunc)
-cdpath=(.. ~ ~/repo)
-# fignore=()
+plugins=(
+)
 
-typeset -U path cdpath fpath
+for plugin ($plugins) {
+    if [[ -f "$ZDOTDIR/plugins/$plugin.plugin.zsh" ]] {
+        source $ZDOTDIR/plugins/$plugin.plugin.zsh
+    }
+}
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 
-autoload -Uz colors
-colors
+autoload -Uz colors; colors
 
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.histfile
-HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|bg|fg|cd|cd -|cd ..|..*|exit|date|* --help|htop|top|path|env|printenv|startx)"
+HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|bg|fg|cd|cd -|cd ..|..*|exit|date|* --help|btop|htop|top|path|env|printenv|startx)"
 
-PROMPT="%B%{$fg[blue]%}[%{$fg[green]%}%n%{$fg[yellow]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[blue]%}]%{$reset_color%}%#%b "
+PROMPT="%B%F{green}%n%f@%F{blue%}%M%f %F{yellow}%1~%b%f %# "
 # RPROMPT=""
 
-export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
-unalias run-help && autoload -Uz run-help
+local HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
+unalias run-help
+autoload -Uz run-help
 
-setopt   notify globdots correct pushdtohome cdablevars autolist
-setopt   correctall autocd recexact longlistjobs
-setopt   autoresume histignoredups pushdsilent noclobber
-setopt   autopushd pushdminus extendedglob rcquotes mailwarning
-unsetopt bgnice autoparamslash
+setopt histignorealldups
+setopt histignorespace
+setopt histreduceblanks
+# setopt sharehistory
 
-zmodload -a zsh/zpty zpty
-zmodload -a zsh/zprof zprof
-zmodload -ap zsh/mapfile mapfile
-zmodload -aF zsh/stat b:zstat
-
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+setopt clobber
+setopt appendcreate
+setopt globdots
+setopt rmstarsilent
+setopt promptsubst
+setopt interactivecomments
 
 zstyle ':completion:*' menu select
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' '*?.old' '*?.pro'
-zstyle ':completion:*:functions' ignored-patterns '_*'
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-slashes 'yes'
+zstyle ':completion::complete:*' '\\'
 
 bindkey -e
 bindkey ' ' magic-space
@@ -82,6 +78,13 @@ alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 
 # check file size
-fs() {
+function fs() {
     du -sh ${1} | awk '{print $1}'
 }
+
+function batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}
+
+local LS_COLORS='rs=0:di=01;34:ln=01;36:so=01;35:cd=40;33;01:ow=34;42'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

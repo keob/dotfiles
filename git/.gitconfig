@@ -9,21 +9,16 @@
 	grep = auto
 	interactive = auto
 	showBranch = auto
+	advice = auto
 [merge]
 	tool = nvim -d
 [alias]
-	new = checkout -b
 	cm = commit -m
-	amend = commit --amend -m
 	st = status -sb
-	br = branch -v
-	fo = fetch origin
-	fu = fetch upstream
-	po = push origin
+	new = checkout -b
+	amend = commit --amend -m
 	unstage = reset HEAD^
 	uncommit = reset --soft HEAD^
-	branches = branch -a
-	remotes = remote -v
 	contributors = shortlog --summary --numbered
 	lo = log --oneline
 	last = log -1 HEAD

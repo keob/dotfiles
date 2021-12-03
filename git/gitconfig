@@ -4,7 +4,8 @@
 	editor = nvim
 	safecrlf = true
 	autocrlf = input
-	pager = more
+	ignoreCase = false
+	pager = 
 [pull]
 	rebase = false
 [push]

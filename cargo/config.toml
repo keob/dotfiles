@@ -9,7 +9,11 @@ rq = "run -q"
 rr = "run --release"
 
 [build]
+jobs = 6
 rustflags = ["-C", "target-cpu=native"]
+
+[net]
+git-fetch-with-cli = true
 
 [profile.release]
 lto = true
@@ -22,6 +26,9 @@ replace-with = "ustc"
 
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
+[source.nju]
+registry = "https://mirror.nju.edu.cn/git/crates.io-index.git"
 
 [source.tuna]
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"

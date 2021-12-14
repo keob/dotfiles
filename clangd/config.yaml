@@ -1,5 +1,15 @@
 CompileFlags:
-    Add: [-Wall]
+  Add: [-Wall]
 
 Index:
-    Background: Skip
+  Background: Skip
+
+Diagnostics:
+  ClangTidy:
+    Add: [
+        bugprone-*,
+        modernize-*,
+        readability-*,
+        performance-*,
+      ]
+    CheckOptions:

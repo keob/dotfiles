@@ -14,6 +14,6 @@ export PYTHONUSERBASE=$HOME/.python
 export CARGO_HOME=$HOME/.cargo
 
 # PATH
-export PATH=$PATH:$GOROOT/bin:$GOBIN:$CARGO_HOME/bin:$PYTHONUSERBASE/bin:$HOME/.npm/bin:$HOME/.local/bin
+export PATH=$PATH:$GOROOT/bin:$GOBIN:$CARGO_HOME/bin:$PYTHONUSERBASE/bin:$HOME/.npm/bin:$HOME/.local/bin:.
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

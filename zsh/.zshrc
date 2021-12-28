@@ -3,15 +3,6 @@ fpath=(
     $fpath
 )
 
-plugins=(
-)
-
-for plugin ($plugins) {
-    if [[ -f "$ZDOTDIR/plugins/$plugin.plugin.zsh" ]] {
-        source $ZDOTDIR/plugins/$plugin.plugin.zsh
-    }
-}
-
 autoload -Uz compinit; compinit
 
 autoload -Uz colors; colors
@@ -19,33 +10,33 @@ autoload -Uz colors; colors
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.histfile
-HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|bg|fg|cd|cd -|cd ..|..*|exit|date|* --help|btop|htop|top|path|env|printenv|startx)"
+HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|bg|fg|cd|cd -|cd ..|..*|exit|date|htop|top|path|env|printenv|startx)"
 
 PROMPT="%B%F{green}%n%f@%F{blue%}%M%f %F{yellow}%1~%b%f %# "
 # RPROMPT=""
-
-local HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
-unalias run-help
-autoload -Uz run-help
 
 setopt histignorealldups
 setopt histignorespace
 setopt histreduceblanks
 # setopt sharehistory
 
+setopt nobeep
+setopt correct
 setopt clobber
 setopt appendcreate
 setopt globdots
 setopt rmstarsilent
 setopt promptsubst
 setopt interactivecomments
+setopt completeinword
+setopt multios
+
+export LSCOLORS=exFxcxdxAxexbxHxGxcxBx
 
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-zstyle ':completion:*' expand 'yes'
-zstyle ':completion:*' squeeze-slashes 'yes'
-zstyle ':completion::complete:*' '\\'
+zstyle ':completion:*' list-colors ${LSCOLORS}
 
 bindkey -e
 bindkey ' ' magic-space
@@ -76,15 +67,3 @@ alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
-
-# check file size
-function fs() {
-    du -sh ${1} | awk '{print $1}'
-}
-
-function batdiff() {
-    git diff --name-only --diff-filter=d | xargs bat --diff
-}
-
-local LS_COLORS='rs=0:di=01;34:ln=01;36:so=01;35:cd=40;33;01:ow=34;42'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

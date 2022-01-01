@@ -29,129 +29,129 @@ mouse:
 schemes:
   gruvbox: &gruvbox
     primary:
-      background:        '#282828'
-      foreground:        '#ebdbb2'
-      dim_foreground:    '#a89984'
-      bright_foreground: '#fbf1c7'
+      background: "#282828"
+      foreground: "#ebdbb2"
+      dim_foreground: "#a89984"
+      bright_foreground: "#fbf1c7"
     cursor:
-      text:   '#282828'
-      cursor: '#ebdbb2'
+      text: "#282828"
+      cursor: "#ebdbb2"
     vi_mode_cursor:
-      text:   '#282828'
-      cursor: '#ebdbb2'
+      text: "#282828"
+      cursor: "#ebdbb2"
     search:
       matches:
-        foreground: '#000000'
-        background: '#ffffff'
+        foreground: "#000000"
+        background: "#ffffff"
       focused_match:
-        foreground: '#282828'
-        background: '#ebdbb2'
+        foreground: "#282828"
+        background: "#ebdbb2"
       bar:
-        background: '#282828'
-        foreground: '#ebdbb2'
+        background: "#282828"
+        foreground: "#ebdbb2"
     line_indicator:
       foreground: None
       background: None
     selection:
-      text:       '#282828'
-      background: '#ebdbb2'
+      text: "#282828"
+      background: "#ebdbb2"
     normal:
-      black:   '#282828'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
+      black: "#282828"
+      red: "#cc241d"
+      green: "#98971a"
+      yellow: "#d79921"
+      blue: "#458588"
+      magenta: "#b16286"
+      cyan: "#689d6a"
+      white: "#a89984"
     bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
-      magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
+      black: "#928374"
+      red: "#fb4934"
+      green: "#b8bb26"
+      yellow: "#fabd2f"
+      blue: "#83a598"
+      magenta: "#d3869b"
+      cyan: "#8ec07c"
+      white: "#ebdbb2"
     dim:
-      black:   '#32302f'
-      red:     '#9d0006'
-      green:   '#79740e'
-      yellow:  '#b57614'
-      blue:    '#076678'
-      magenta: '#8f3f71'
-      cyan:    '#427b58'
-      white:   '#928374'
+      black: "#32302f"
+      red: "#9d0006"
+      green: "#79740e"
+      yellow: "#b57614"
+      blue: "#076678"
+      magenta: "#8f3f71"
+      cyan: "#427b58"
+      white: "#928374"
 
   dracula: &dracula
     primary:
-      background: '#282a36'
-      foreground: '#f8f8f2'
+      background: "#282a36"
+      foreground: "#f8f8f2"
     cursor:
-      text:   '#282a36'
-      cursor: '#f8f8f2'
+      text: "#282a36"
+      cursor: "#f8f8f2"
     vi_mode_cursor:
-      text:   '#282a36'
-      cursor: '#f8f8f2'
+      text: "#282a36"
+      cursor: "#f8f8f2"
     search:
       matches:
-        foreground: '#44475a'
-        background: '#50fa7b'
+        foreground: "#44475a"
+        background: "#50fa7b"
       focused_match:
-        foreground: '#44475a'
-        background: '#ffb86c'
+        foreground: "#44475a"
+        background: "#ffb86c"
       bar:
-        background: '#282a36'
-        foreground: '#f8f8f2'
+        background: "#282a36"
+        foreground: "#f8f8f2"
     hints:
       start:
-        foreground: '#282a36'
-        background: '#f1fa8c'
+        foreground: "#282a36"
+        background: "#f1fa8c"
       end:
-        foreground: '#f1fa8c'
-        background: '#282a36'
+        foreground: "#f1fa8c"
+        background: "#282a36"
     line_indicator:
       foreground: None
       background: None
     selection:
-      text:       '#f8f8f2'
-      background: '#44475a'
+      text: "#f8f8f2"
+      background: "#44475a"
     normal:
-      black:   '#21222c'
-      red:     '#ff5555'
-      green:   '#50fa7b'
-      yellow:  '#f1fa8c'
-      blue:    '#bd93f9'
-      magenta: '#ff79c6'
-      cyan:    '#8be9fd'
-      white:   '#f8f8f2'
+      black: "#21222c"
+      red: "#ff5555"
+      green: "#50fa7b"
+      yellow: "#f1fa8c"
+      blue: "#bd93f9"
+      magenta: "#ff79c6"
+      cyan: "#8be9fd"
+      white: "#f8f8f2"
     bright:
-      black:   '#6272a4'
-      red:     '#ff6e6e'
-      green:   '#69ff94'
-      yellow:  '#ffffa5'
-      blue:    '#d6acff'
-      magenta: '#ff92df'
-      cyan:    '#a4ffff'
-      white:   '#ffffff'
+      black: "#6272a4"
+      red: "#ff6e6e"
+      green: "#69ff94"
+      yellow: "#ffffa5"
+      blue: "#d6acff"
+      magenta: "#ff92df"
+      cyan: "#a4ffff"
+      white: "#ffffff"
     dim:
-      black:   '#14151b'
-      red:     '#ff2222'
-      green:   '#1ef956'
-      yellow:  '#ebf85b'
-      blue:    '#4d5b86'
-      magenta: '#ff46b0'
-      cyan:    '#59dffc'
-      white:   '#e6e6d1'
+      black: "#14151b"
+      red: "#ff2222"
+      green: "#1ef956"
+      yellow: "#ebf85b"
+      blue: "#4d5b86"
+      magenta: "#ff46b0"
+      cyan: "#59dffc"
+      white: "#e6e6d1"
 
 colors: *dracula
 
 key_bindings:
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
-  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
-  - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
-  - { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
-  - { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: PageUp, mods: Shift, mode: ~Alt, action: ScrollPageUp }
+  - { key: PageDown, mods: Shift, mode: ~Alt, action: ScrollPageDown }
+  - { key: Home, mods: Shift, mode: ~Alt, action: ScrollToTop }
+  - { key: End, mods: Shift, mode: ~Alt, action: ScrollToBottom }
 
-  - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
-  - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }

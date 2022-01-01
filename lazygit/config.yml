@@ -10,16 +10,16 @@ gui:
   theme:
     lightTheme: false
     activeBorderColor:
-    - green
-    - bold
+      - green
+      - bold
     inactiveBorderColor:
-    - white
+      - white
     optionsTextColor:
-    - blue
+      - blue
     selectedLineBgColor:
-    - default
+      - default
     selectedRangeBgColor:
-    - blue
+      - blue
   commitLength:
     show: true
   skipNoStagedFilesWarning: false
@@ -39,9 +39,11 @@ git:
     mode: merge
   skipHookPrefix: WIP
   autoFetch: true
-  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative
+  branchLogCmd:
+    git log --graph --color=always --abbrev-commit --decorate --date=relative
     --pretty=medium {{branchName}} --
-  allBranchesLogCmd: git log --graph --all --color=always --abbrev-commit --decorate
+  allBranchesLogCmd:
+    git log --graph --all --color=always --abbrev-commit --decorate
     --date=relative  --pretty=medium
   overrideGpg: false
   disableForcePushing: false
@@ -67,10 +69,10 @@ keybinding:
     nextItem: <down>
     prevItem-alt: k
     nextItem-alt: j
-    prevPage: ','
+    prevPage: ","
     nextPage: .
     gotoTop: <
-    gotoBottom: '>'
+    gotoBottom: ">"
     prevBlock: <left>
     nextBlock: <right>
     prevBlock-alt: h
@@ -81,7 +83,7 @@ keybinding:
     prevMatch: "N"
     startSearch: /
     optionMenu: x
-    optionMenu-alt1: '?'
+    optionMenu-alt1: "?"
     select: <space>
     goInto: <enter>
     confirm: <enter>
@@ -96,14 +98,14 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeCustomCommand: ':'
+    executeCustomCommand: ":"
     createRebaseOptionsMenu: m
     pushFiles: P
     pullFiles: p
     refresh: R
     createPatchOptionsMenu: <c-p>
-    nextTab: ']'
-    prevTab: '['
+    nextTab: "]"
+    prevTab: "["
     nextScreenMode: +
     prevScreenMode: _
     undo: z
@@ -114,7 +116,7 @@ keybinding:
     copyToClipboard: <c-o>
     submitEditorText: <enter>
     appendNewline: <a-enter>
-    extrasMenu: '@'
+    extrasMenu: "@"
   status:
     checkForUpdate: u
     recentRepos: <enter>
@@ -131,7 +133,7 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: '`'
+    toggleTreeView: "`"
     openMergeTool: M
   branches:
     createPullRequest: o

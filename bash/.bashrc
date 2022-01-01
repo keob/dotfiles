@@ -27,9 +27,6 @@ export LESS="-SRXF"
 # GPG
 export GPG_TTY=$(tty)
 
-# TERM
-export TERM="xterm-256color"
-
 # Python
 export PYTHONDONTWRITEBYTECODE=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -67,25 +64,3 @@ alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
-
-# Function
-up () {
-    local d=""
-    local limit="$1"
-
-    if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-        limit=1
-    fi
-
-    for ((i=1;i<=limit;i++)); do
-        d="../$d"
-    done
-
-    if ! cd "$d"; then
-        echo "Couldn't go up $limit dirs";
-    fi
-}
-
-fs() {
-    du -sh ${1} | awk '{print $1}'
-}

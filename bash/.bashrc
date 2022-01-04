@@ -7,7 +7,7 @@
 
 PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h \[\e[01;34m\]\W \[\e[0m\]\$ '
 
-HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:..*:exit:date:htop:top:env:printenv:startx"
+HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:htop:top:env:printenv:startx"
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE=~/.bash_history
 HISTTIMEFORMAT='%F %T '
@@ -35,8 +35,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgreprc
 
 # Mirrors
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 # Alias
 alias ..="cd .."

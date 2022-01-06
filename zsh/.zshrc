@@ -36,6 +36,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 bindkey -e
 bindkey ' ' magic-space
 bindkey '^I' complete-word
+bindkey '\e[3~' delete-char
 
 alias ..="cd .."
 alias ...="cd ../.."

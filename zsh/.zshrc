@@ -1,6 +1,5 @@
-fpath=(
+fpath+=(
     $ZDOTDIR/comp
-    $fpath
 )
 
 autoload -Uz compinit; compinit
@@ -10,9 +9,9 @@ autoload -Uz colors; colors
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.histfile
-HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|bg|fg|cd|cd -|cd ..|..*|exit|date|htop|top|path|env|printenv|startx)"
+HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|pwd|history|cd|cd -|cd ..|...|exit|date|htop|top|env|printenv|startx)"
 
-PROMPT="%B%F{green}%n%f@%F{blue%}%M%f %F{yellow}%1~%b%f %# "
+PROMPT="%B%F{green}%n%f@%F{cyan}%M%f %F{blue}%1~%b%f %# "
 # RPROMPT=""
 
 setopt histignorealldups
@@ -31,12 +30,8 @@ setopt interactivecomments
 setopt completeinword
 setopt multios
 
-export LSCOLORS=exFxcxdxAxexbxHxGxcxBx
-
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-zstyle ':completion:*' list-colors ${LSCOLORS}
 
 bindkey -e
 bindkey ' ' magic-space
@@ -44,8 +39,6 @@ bindkey '^I' complete-word
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
 alias ll="ls -Alh"
 alias la="ls -A"
@@ -63,6 +56,7 @@ alias gcm="git commit -m"
 alias gco="git checkout"
 alias gph="git push"
 alias gpl="git pull"
+
 alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"

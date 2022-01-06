@@ -22,7 +22,13 @@ lto = true
 lto = true
 
 [source.crates-io]
-replace-with = "ustc"
+replace-with = "rsproxy"
+
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
 
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index"

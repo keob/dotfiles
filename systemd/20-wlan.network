@@ -3,6 +3,6 @@ Name=wl*
 
 [Network]
 DHCP=yes
-#DNSOverTLS=yes
 MulticastDNS=yes
+IPv6PrivacyExtensions=yes
 DNS=223.5.5.5 2400:3200::1

@@ -64,3 +64,12 @@ alias tn="tmux new -s"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+
+mcd() {
+    mkdir -p "$1"
+    cd "$1"
+}
+
+fs() {
+    du -sh "$1" | awk '{print $1}'
+}

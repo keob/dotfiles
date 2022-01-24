@@ -1,5 +1,9 @@
 #! /bin/sh
 
+xset b off
+xsetroot -cursor_name left_ptr
+feh --no-fehbg --bg-fill ~/Pictures/wallpaper1.png
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X

@@ -6,10 +6,8 @@ set input-meta on
 set convert-meta off
 set output-meta on
 set enable-keypad on
-set completion-ignore-case on
-
 set colored-stats on
-set mark-symlinked-directories on
+set completion-ignore-case on
 
 $if mode=emacs
 

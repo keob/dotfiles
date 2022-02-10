@@ -5,5 +5,7 @@ Name=eth*
 [Network]
 DHCP=yes
 MulticastDNS=yes
-IPv6PrivacyExtensions=yes
+IPv6AcceptRA=yes
+KeepConfiguration=yes
+IPv6PrivacyExtensions=no
 DNS=223.5.5.5 2400:3200::1

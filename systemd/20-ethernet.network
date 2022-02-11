@@ -4,8 +4,7 @@ Name=eth*
 
 [Network]
 DHCP=yes
+DNS=223.5.5.5
+DNS=2400:3200::1
 MulticastDNS=yes
-IPv6AcceptRA=yes
-KeepConfiguration=yes
 IPv6PrivacyExtensions=no
-DNS=223.5.5.5 2400:3200::1

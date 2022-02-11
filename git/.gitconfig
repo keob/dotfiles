@@ -1,6 +1,8 @@
 [user]
 	name = kebo
 	email = kebo2021@qq.com
+[core]
+	editor = nvim
 [color]
 	branch = auto
 	status = auto
@@ -12,6 +14,11 @@
 	advice = auto
 [merge]
 	tool = nvim -d
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [alias]
 	cm = commit -m
 	st = status -sb

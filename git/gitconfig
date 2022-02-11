@@ -1,7 +1,6 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = nvim
 	safecrlf = true
 	autocrlf = input
 	ignoreCase = false

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h \[\e[01;34m\]\W \[\e[0m\]\$ '
+PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h\[\e[0m\] \[\e[01;34m\]\W\[\e[0m\] \$ '
 
 HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:htop:top:env:printenv:startx"
 HISTCONTROL=ignoreboth:erasedups
@@ -18,11 +18,11 @@ shopt -s dotglob
 shopt -s histappend
 shopt -s lithist
 
+# Direnv
+eval "$(direnv hook bash)"
+
 # EDITOR
 export EDITOR=nvim
-
-# LESS
-export LESS="-SRXF"
 
 # GPG
 export GPG_TTY=$(tty)
@@ -30,9 +30,6 @@ export GPG_TTY=$(tty)
 # Python
 export PYTHONDONTWRITEBYTECODE=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-# RG
-export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgreprc
 
 # Mirrors
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"

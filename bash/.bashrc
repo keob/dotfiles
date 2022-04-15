@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h\[\e[0m\] \[\e[01;34m\]\W\[\e[0m\] \$ '
+PS1="\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h\[\e[0m\] \[\e[01;34m\]\W\[\e[0m\] \$ "
 
 HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:htop:top:env:printenv:startx"
 HISTCONTROL=ignoreboth:erasedups

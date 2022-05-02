@@ -11,10 +11,14 @@ set $menu wofi
 
 font pango:monospace 12
 
-#focus_follows_mouse yes
-
-gaps inner 3
-gaps outer 3
-default_border pixel 4
+# gaps inner 3
+# gaps outer 0
+# smart_gaps on
+focus_follows_mouse yes
+hide_edge_borders smart
+default_border pixel 3
+default_floating_border pixel 3
 
 include $HOME/.config/sway/config.d/*.conf
+
+# vim: set sw=2 ts=2 et tw=80 ft=i3config:

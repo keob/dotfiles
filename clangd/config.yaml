@@ -6,10 +6,5 @@ Index:
 
 Diagnostics:
   ClangTidy:
-    Add: [
-        bugprone-*,
-        modernize-*,
-        readability-*,
-        performance-*,
-      ]
+    Add: [bugprone-*, modernize-*, readability-*, performance-*]
     CheckOptions:

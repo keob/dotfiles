@@ -7,4 +7,4 @@ DHCP=yes
 DNS=223.5.5.5
 DNS=2400:3200::1
 MulticastDNS=yes
-IPv6PrivacyExtensions=no
+IPv6PrivacyExtensions=yes

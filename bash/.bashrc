@@ -7,7 +7,7 @@
 
 PS1="\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h\[\e[0m\] \[\e[01;34m\]\W\[\e[0m\] \$ "
 
-HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:htop:top:env:printenv:startx"
+HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:btop:htop:top:env:printenv"
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE=~/.bash_history
 HISTTIMEFORMAT='%F %T '
@@ -58,9 +58,6 @@ alias gcm="git commit -m"
 alias gst="git status -sb"
 
 alias tn="tmux new -s"
-
-alias pbcopy="xclip -selection clipboard"
-alias pbpaste="xclip -selection clipboard -o"
 
 mcd() {
     mkdir -p "$1"

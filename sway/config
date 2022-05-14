@@ -12,7 +12,7 @@ set $menu wofi
 font pango:monospace 12
 
 # gaps inner 3
-# gaps outer 0
+# gaps outer 3
 # smart_gaps on
 focus_follows_mouse yes
 hide_edge_borders smart
@@ -22,29 +22,29 @@ default_floating_border pixel 3
 output eDP-1 bg ~/Pictures/wallpaper1.png fill
 
 output eDP-1 {
-  pos 0,0
-  dpms on
-  mode 1920x1080@60Hz
+    pos 0,0
+    dpms on
+    mode 1920x1080@60Hz
 }
 
 input "type:keyboard" {
-  xkb_layout us
-  repeat_rate 30
-  repeat_delay 200
+    xkb_layout "us"
+    repeat_rate 30
+    repeat_delay 200
 }
 
 input "type:touchpad" {
-  tap enabled
-  dwt enabled
-  pointer_accel 0.3
-  accel_profile adaptive
-  natural_scroll enabled
+    tap enabled
+    dwt enabled
+    pointer_accel 0.3
+    accel_profile adaptive
+    natural_scroll enabled
 }
 
 input "type:pointer" {
-  pointer_accel 0.3
-  accel_profile adaptive
-  natural_scroll disabled
+    pointer_accel 0.3
+    accel_profile adaptive
+    natural_scroll disabled
 }
 
 # Start a terminal
@@ -67,27 +67,27 @@ bindsym $mod+Shift+q exec 'swaymsg exit'
 
 # Resizing containers:
 mode "resize" {
-  # left will shrink the containers width
-  bindsym $left resize shrink width 10px
+    # left will shrink the containers width
+    bindsym $left resize shrink width 10px
 
-  # down will grow the containers height
-  bindsym $down resize grow height 10px
+    # down will grow the containers height
+    bindsym $down resize grow height 10px
 
-  # up will shrink the containers height
-  bindsym $up resize shrink height 10px
+    # up will shrink the containers height
+    bindsym $up resize shrink height 10px
 
-  # right will grow the containers width
-  bindsym $right resize grow width 10px
+    # right will grow the containers width
+    bindsym $right resize grow width 10px
 
-  # Ditto, with arrow keys
-  bindsym Left resize shrink width 10px
-  bindsym Down resize grow height 10px
-  bindsym Up resize shrink height 10px
-  bindsym Right resize grow width 10px
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
 
-  # Return to default mode
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -169,21 +169,21 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 # bar {
-#   position top
-#   status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
-#   colors {
-#     background #282A36
-#       statusline #F8F8F2
-#       separator  #44475A
-#
-#       focused_workspace  #44475A #44475A #F8F8F2
-#       active_workspace   #282A36 #44475A #F8F8F2
-#       inactive_workspace #282A36 #282A36 #BFBFBF
-#       urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#       binding_mode       #FF5555 #FF5555 #F8F8F2
-#   }
+#     position top
+#     status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
+#     colors {
+#         background #282A36
+#         statusline #F8F8F2
+#         separator  #44475A
+# 
+#         focused_workspace  #44475A #44475A #F8F8F2
+#         active_workspace   #282A36 #44475A #F8F8F2
+#         inactive_workspace #282A36 #282A36 #BFBFBF
+#         urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#         binding_mode       #FF5555 #FF5555 #F8F8F2
+#     }
 # }
 
 exec "systemctl --user import-environment"
 
-# vim: set sw=2 ts=2 et tw=80 ft=i3config:
+# vim: set sw=4 ts=4 et tw=80 ft=i3config:

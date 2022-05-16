@@ -15,8 +15,8 @@ HISTSIZE=10000
 
 shopt -s cmdhist
 shopt -s dotglob
-shopt -s histappend
 shopt -s lithist
+shopt -s histappend
 
 # Direnv
 eval "$(direnv hook bash)"
@@ -26,6 +26,9 @@ export EDITOR=nvim
 
 # GPG
 export GPG_TTY=$(tty)
+
+# LESS
+export LESS="-F -R -X"
 
 # Python
 export PYTHONDONTWRITEBYTECODE=1

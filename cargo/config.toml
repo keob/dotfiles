@@ -1,12 +1,12 @@
 [alias]
-b = "build"
-c = "check"
 f = "fmt"
 r = "run"
 t = "test"
-br = "build --release"
+c = "check"
+b = "build"
 rq = "run -q"
 rr = "run --release"
+br = "build --release"
 
 [build]
 jobs = 6
@@ -15,11 +15,14 @@ rustflags = ["-C", "target-cpu=native"]
 [net]
 git-fetch-with-cli = true
 
+[profile.bench]
+lto = true
+
 [profile.release]
 lto = true
 
-[profile.bench]
-lto = true
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
 
 [source.crates-io]
 replace-with = "rsproxy"
@@ -27,17 +30,14 @@ replace-with = "rsproxy"
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
 
-[registries.rsproxy]
-index = "https://rsproxy.cn/crates.io-index"
-
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.nju]
 registry = "https://mirror.nju.edu.cn/git/crates.io-index.git"
 
-[source.tuna]
-registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
-
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"

@@ -7,7 +7,7 @@
 
 PS1="\[\e[01;32m\]\u\[\e[0m\]@\[\e[01;36m\]\h\[\e[0m\] \[\e[01;34m\]\W\[\e[0m\] \$ "
 
-HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit:date:btop:htop:top:env:printenv"
+HISTIGNORE="clear:ls:la:lth:lh:ll:pwd:history:cd:cd -:cd ..:...:exit"
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE=~/.bash_history
 HISTTIMEFORMAT='%F %T '

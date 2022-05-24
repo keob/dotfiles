@@ -5,7 +5,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Go
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/lib/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 

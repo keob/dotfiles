@@ -1,29 +1,39 @@
 gui:
+  authorColors: {}
+  branchColors: {}
   scrollHeight: 2
   scrollPastBottom: true
   mouseEvents: true
   skipUnstageLineWarning: false
-  skipStashWarning: true
+  skipStashWarning: false
   sidePanelWidth: 0.3333
   expandFocusedSidePanel: false
   mainPanelSplitMode: flexible
+  language: auto
   theme:
     lightTheme: false
     activeBorderColor:
-      - green
-      - bold
+    - green
+    - bold
     inactiveBorderColor:
-      - white
+    - white
     optionsTextColor:
-      - blue
+    - blue
     selectedLineBgColor:
-      - default
+    - default
     selectedRangeBgColor:
-      - blue
+    - blue
+    cherryPickedCommitBgColor:
+    - blue
+    cherryPickedCommitFgColor:
+    - cyan
+    unstagedChangesColor:
+    - red
   commitLength:
     show: true
   skipNoStagedFilesWarning: false
-  showFileTree: false
+  showListFooter: true
+  showFileTree: true
   showRandomTip: true
   showCommandLog: true
   commandLogSize: 8
@@ -32,22 +42,25 @@ git:
     colorArg: always
     pager: ""
     useConfig: false
+  commit:
+    signOff: false
   merging:
     manualCommit: false
     args: ""
-  pull:
-    mode: merge
   skipHookPrefix: WIP
   autoFetch: true
-  branchLogCmd:
-    git log --graph --color=always --abbrev-commit --decorate --date=relative
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative
     --pretty=medium {{branchName}} --
-  allBranchesLogCmd:
-    git log --graph --all --color=always --abbrev-commit --decorate
+  allBranchesLogCmd: git log --graph --all --color=always --abbrev-commit --decorate
     --date=relative  --pretty=medium
   overrideGpg: false
   disableForcePushing: false
   commitPrefixes: {}
+  parseEmoji: false
+  log:
+    order: topo-order
+    showGraph: when-maximised
+  diffContextSize: 3
 update:
   method: prompt
   days: 14
@@ -69,21 +82,29 @@ keybinding:
     nextItem: <down>
     prevItem-alt: k
     nextItem-alt: j
-    prevPage: ","
+    prevPage: ','
     nextPage: .
+    scrollLeft: H
+    scrollRight: L
     gotoTop: <
-    gotoBottom: ">"
+    gotoBottom: '>'
     prevBlock: <left>
     nextBlock: <right>
     prevBlock-alt: h
     nextBlock-alt: l
     nextBlock-alt2: <tab>
     prevBlock-alt2: <backtab>
+    jumpToBlock:
+    - "1"
+    - "2"
+    - "3"
+    - "4"
+    - "5"
     nextMatch: "n"
     prevMatch: "N"
     startSearch: /
     optionMenu: x
-    optionMenu-alt1: "?"
+    optionMenu-alt1: '?'
     select: <space>
     goInto: <enter>
     confirm: <enter>
@@ -98,14 +119,14 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeCustomCommand: ":"
+    executeCustomCommand: ':'
     createRebaseOptionsMenu: m
     pushFiles: P
     pullFiles: p
     refresh: R
     createPatchOptionsMenu: <c-p>
-    nextTab: "]"
-    prevTab: "["
+    nextTab: ']'
+    prevTab: '['
     nextScreenMode: +
     prevScreenMode: _
     undo: z
@@ -114,9 +135,13 @@ keybinding:
     diffingMenu: W
     diffingMenu-alt: <c-e>
     copyToClipboard: <c-o>
+    openRecentRepos: <c-r>
     submitEditorText: <enter>
     appendNewline: <a-enter>
-    extrasMenu: "@"
+    extrasMenu: '@'
+    toggleWhitespaceInDiffView: <c-w>
+    increaseContextInDiffView: '}'
+    decreaseContextInDiffView: '{'
   status:
     checkForUpdate: u
     recentRepos: <enter>
@@ -133,10 +158,12 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: "`"
+    toggleTreeView: '`'
     openMergeTool: M
+    openStatusFilter: <c-b>
   branches:
     createPullRequest: o
+    viewPullRequestOptions: O
     copyPullRequestURL: <c-y>
     checkoutBranchByName: c
     forceCheckoutBranch: F
@@ -168,6 +195,9 @@ keybinding:
     checkoutCommit: <space>
     resetCherryPick: <c-R>
     copyCommitMessageToClipboard: <c-y>
+    openLogMenu: <c-l>
+    openInBrowser: o
+    viewBisectOptions: b
   stash:
     popStash: g
   commitFiles:
@@ -182,9 +212,11 @@ keybinding:
     update: u
     bulkMenu: b
 os:
-  openCommand: sh -c "xdg-open {{filename}} >/dev/null"
-  openLinkCommand: sh -c "xdg-open {{link}} >/dev/null"
+  editCommandTemplate: '{{editor}} {{filename}}'
+  openCommand: xdg-open {{filename}} >/dev/null
+  openLinkCommand: xdg-open {{link}} >/dev/null
 disableStartupPopups: true
 customCommands: []
 services: {}
 notARepository: prompt
+promptToReturnFromSubprocess: true

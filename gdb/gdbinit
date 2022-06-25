@@ -1,0 +1,8 @@
+set verbose off
+set confirm off
+set print object on
+set print pretty on
+set print array-indexes on
+set auto-load safe-path /
+set history save on
+set history filename ~/.gdb_history

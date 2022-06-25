@@ -184,6 +184,5 @@ client.background       #F8F8F2
 #     }
 # }
 
-exec "systemctl --user import-environment"
-
-# vim: set sw=4 ts=4 et tw=80 ft=i3config:
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK

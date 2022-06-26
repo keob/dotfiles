@@ -42,24 +42,24 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias md="mkdir -p"
-alias ll="ls -Alh"
 alias la="ls -A"
 alias lh="ls -lh"
+alias ll="ls -Alh"
 alias lth="ls -Alth"
 alias ls="ls --color=auto"
+alias md="mkdir -p"
+
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
-alias gaa="git add ."
 alias gph="git push"
 alias gpl="git pull"
 alias gfh="git fetch"
+alias gaa="git add ."
 alias gco="git checkout"
 alias gcm="git commit -m"
 alias gst="git status -sb"
-
 alias tn="tmux new -s"
 
 mcd() {

@@ -5,9 +5,9 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Go
-export GOROOT=/usr/local/lib/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export GOROOT=/usr/local/go
 
 # Rust
 export CARGO_HOME=$HOME/.cargo

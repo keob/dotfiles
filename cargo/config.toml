@@ -15,11 +15,15 @@ rustflags = ["-C", "target-cpu=native"]
 [net]
 git-fetch-with-cli = true
 
-[profile.bench]
-lto = true
+[profile.dev]
+incremental = true
+codegen-units = 64
 
 [profile.release]
 lto = true
+strip = true
+codegen-units = 1
+incremental = false
 
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"

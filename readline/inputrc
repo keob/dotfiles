@@ -7,7 +7,7 @@ set convert-meta off
 set output-meta on
 set enable-keypad on
 set colored-stats on
-set completion-ignore-case on
+# set completion-ignore-case on
 
 $if mode=emacs
 

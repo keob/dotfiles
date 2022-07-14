@@ -5,6 +5,7 @@ Index:
   Background: Skip
 
 Diagnostics:
+  UnusedIncludes: Strict
   ClangTidy:
     Add: [bugprone-*, modernize-*, readability-*, performance-*]
     CheckOptions:

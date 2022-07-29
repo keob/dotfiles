@@ -1,4 +1,5 @@
-# fpath+=()
+# fpath=($fpath)
+# cdpath=()
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
@@ -8,7 +9,7 @@ SAVEHIST=10000
 HISTFILE=~/.histfile
 HISTORY_IGNORE="(clear|ls|la|lth|lh|ll|pwd|history|cd|cd -|cd ..|...|exit)"
 
-PROMPT="%B%F{green}%n%f@%F{cyan}%M%f %F{blue}%1~%b%f %# "
+PROMPT="%B%F{green}%n%f@%F{cyan}%M%f %F{blue}%1~%f%b %# "
 # RPROMPT=""
 
 # Direnv
@@ -20,7 +21,7 @@ setopt histreduceblanks
 # setopt sharehistory
 
 setopt nobeep
-setopt correct
+# setopt correct
 setopt clobber
 setopt appendcreate
 setopt globdots
@@ -32,7 +33,18 @@ setopt multios
 
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:functions' ignored-patterns '_*'
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 
 bindkey -e
 bindkey ' ' magic-space

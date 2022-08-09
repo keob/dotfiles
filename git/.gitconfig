@@ -3,19 +3,18 @@
 	email = kebo2021@qq.com
 [core]
 	editor = nvim
-[color]
-	branch = auto
-	status = auto
-	diff = auto
-	log = auto
-	grep = auto
-	interactive = auto
-	showBranch = auto
-	advice = auto
 [merge]
 	tool = nvim -d
 [alias]
+	l = log
+	t = tag
+	a = add
+	ai = add -i
+	rb = rebase
+	co = checkout
 	cm = commit -m
+	cp = cherry-pick
+	ut = rm -r --cached
 	st = status -sb
 	new = checkout -b
 	amend = commit --amend -m

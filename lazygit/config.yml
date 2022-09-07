@@ -10,6 +10,7 @@ gui:
   expandFocusedSidePanel: false
   mainPanelSplitMode: flexible
   language: auto
+  timeFormat: 02 Jan 06 15:04 MST
   theme:
     lightTheme: false
     activeBorderColor:
@@ -20,13 +21,13 @@ gui:
     optionsTextColor:
     - blue
     selectedLineBgColor:
-    - default
+    - blue
     selectedRangeBgColor:
     - blue
     cherryPickedCommitBgColor:
-    - blue
-    cherryPickedCommitFgColor:
     - cyan
+    cherryPickedCommitFgColor:
+    - blue
     unstagedChangesColor:
     - red
   commitLength:
@@ -36,7 +37,10 @@ gui:
   showFileTree: true
   showRandomTip: true
   showCommandLog: true
+  showBottomLine: true
+  showIcons: false
   commandLogSize: 8
+  splitDiff: auto
 git:
   paging:
     colorArg: always
@@ -49,6 +53,7 @@ git:
     args: ""
   skipHookPrefix: WIP
   autoFetch: true
+  autoRefresh: true
   branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative
     --pretty=medium {{branchName}} --
   allBranchesLogCmd: git log --graph --all --color=always --abbrev-commit --decorate
@@ -60,6 +65,7 @@ git:
   log:
     order: topo-order
     showGraph: when-maximised
+    showWholeGraph: false
   diffContextSize: 3
 update:
   method: prompt
@@ -151,7 +157,7 @@ keybinding:
     commitChangesWithoutHook: w
     amendLastCommit: A
     commitChangesWithEditor: C
-    ignoreFile: i
+    IgnoreOrExcludeFile: i
     refreshFiles: r
     stashAllChanges: s
     viewStashOptions: S
@@ -186,6 +192,7 @@ keybinding:
     moveDownCommit: <c-j>
     moveUpCommit: <c-k>
     amendToCommit: A
+    resetCommitAuthor: a
     pickCommit: p
     revertCommit: t
     cherryPickCopy: c
@@ -194,7 +201,7 @@ keybinding:
     tagCommit: T
     checkoutCommit: <space>
     resetCherryPick: <c-R>
-    copyCommitMessageToClipboard: <c-y>
+    copyCommitAttributeToClipboard: "y"
     openLogMenu: <c-l>
     openInBrowser: o
     viewBisectOptions: b
@@ -207,12 +214,12 @@ keybinding:
     toggleDragSelect-alt: V
     toggleSelectHunk: a
     pickBothHunks: b
+    editSelectHunk: E
   submodules:
     init: i
     update: u
     bulkMenu: b
 os:
-  editCommandTemplate: '{{editor}} {{filename}}'
   openCommand: xdg-open {{filename}} >/dev/null
   openLinkCommand: xdg-open {{link}} >/dev/null
 disableStartupPopups: true

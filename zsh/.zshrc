@@ -38,14 +38,6 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-zstyle ':completion:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:functions' ignored-patterns '_*'
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-
 bindkey -e
 bindkey ' ' magic-space
 bindkey '^I' complete-word

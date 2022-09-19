@@ -1,11 +1,13 @@
+term=foot
 show=drun
 width=500
 height=600
 xoffset=710
 yoffset=200
-show_all=true
 layer=overlay
+show_all=true
+matching=fuzzy
 insensitive=true
 hide_scroll=true
 allow_images=true
-style=/home/kebo/.config/wofi/style.css
+sort_order=alphabetical

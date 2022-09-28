@@ -2,10 +2,9 @@ CompileFlags:
   Add: [-Wall, -Wextra]
 
 Index:
-  Background: Skip
+  Background: Build
 
 Diagnostics:
   UnusedIncludes: Strict
   ClangTidy:
-    Add: [bugprone-*, modernize-*, readability-*, performance-*]
-    CheckOptions:
+    Add: [bugprone*, portability*, performance*, modernize*]

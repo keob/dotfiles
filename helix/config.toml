@@ -1,0 +1,34 @@
+theme = "dracula"
+
+[editor]
+idle-timeout = 0
+true-color = true
+color-modes	= true
+auto-completion = true
+bufferline = "multiple"
+line-number = "relative"
+completion-trigger-len = 1
+
+[editor.statusline]
+left = ["mode", "file-name"]
+center = ["spinner"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.lsp]
+display-messages = false

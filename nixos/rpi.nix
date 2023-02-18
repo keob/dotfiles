@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  user = "";
+  user = "kebo";
   password = "";
   SSID = "";
   SSIDpassword = "";
@@ -9,6 +9,8 @@ let
   hostname = "nixos";
 in
 {
+  imports = ["${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz" }/raspberry-pi/4"];
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
@@ -27,7 +29,7 @@ in
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    initrd.verbose = false;
+    # initrd.verbose = false;
 
     enableContainers = false;
   };
@@ -84,12 +86,17 @@ in
   };
 
   users = {
-    mutableUsers = false;
-    users."${user}" = {
-      isNormalUser = true;
-      password = password;
-      extraGroups = [ "wheel" "audio" "video" "input" ];
-    };
+    mutableUsers = true;
+    users = {
+        "${user}" = {
+        isNormalUser = true;
+        password = password;
+        extraGroups = [ "wheel" "audio" "video" "input" ];
+      };
+      root = {
+        password = password;
+      };
+    }
   };
 
   nixpkgs.config = {

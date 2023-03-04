@@ -1,11 +1,19 @@
 CompileFlags:
   Add: [-Wall, -Wextra]
 
+If:
+  PathMatch: /usr/include/.*
+Diagnostics:
+  Suppress: "*"
+
 Index:
   Background: Build
+  StandardLibrary: Yes
 
 Diagnostics:
   UnusedIncludes: Strict
   ClangTidy:
-    Add: [bugprone*, portability*, performance*, modernize*]
-    Remove: modernize-use-trailing-return-type
+    Add: [bugprone*, portability*, performance*]
+
+InlayHints:
+  Enabled: No

@@ -14,7 +14,7 @@ font pango:monospace 12
 # gaps inner 3
 # gaps outer 3
 # smart_gaps on
-focus_follows_mouse yes
+focus_follows_mouse no
 hide_edge_borders smart
 default_border pixel 3
 default_floating_border pixel 3
@@ -114,6 +114,9 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
+bindgesture swipe:left workspace next
+bindgesture swipe:right workspace prev
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1

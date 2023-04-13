@@ -19,7 +19,7 @@ shopt -s dotglob
 shopt -s histappend
 
 # Direnv
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 # EDITOR
 export EDITOR=nvim

@@ -8,15 +8,8 @@ rq = "run -q"
 rr = "run --release"
 br = "build --release"
 
-[build]
-rustflags = ["-C", "target-cpu=native"]
-
 [net]
 git-fetch-with-cli = true
-
-[profile.dev]
-incremental = true
-codegen-units = 64
 
 [profile.release]
 lto = true
@@ -31,16 +24,13 @@ index = "https://rsproxy.cn/crates.io-index"
 replace-with = "rsproxy"
 
 [source.rsproxy]
-registry = "https://rsproxy.cn/crates.io-index"
+registry = "sparse+https://rsproxy.cn/index/"
 
 [source.ustc]
-registry = "https://mirrors.ustc.edu.cn/crates.io-index"
-
-[source.nju]
-registry = "https://mirror.nju.edu.cn/git/crates.io-index.git"
+registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
 
 [source.sjtu]
-registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
+registry = "sparse+https://mirrors.sjtug.sjtu.edu.cn/crates.io-index/"
 
 [source.tuna]
-registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"

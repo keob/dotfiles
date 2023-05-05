@@ -19,7 +19,8 @@ hide_edge_borders smart
 default_border pixel 3
 default_floating_border pixel 3
 
-output eDP-1 bg ~/Pictures/wallpaper1.png fill
+# output eDP-1 bg ~/Pictures/wallpaper1.png fill
+output eDP-1 bg #282A36 solid_color
 
 output eDP-1 {
     pos 0 0

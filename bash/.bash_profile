@@ -5,12 +5,14 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Go
-export GOPATH=${HOME}/go
-export GOBIN=${GOPATH}/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOBIN
 
 # Rust
-export CARGO_HOME=${HOME}/.cargo
+export CARGO_HOME=$HOME/.cargo
+export PATH=$PATH:${CARGO_HOME}/bin
 
-# PATH
-export PATH=${PATH}:${GOROOT}/bin:${GOBIN}:${CARGO_HOME}/bin:${HOME}/.local/bin
+# Local
+export PATH=$PATH:$HOME/.local/bin

@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 
-set $term foot
+set $term footclient
 
 set $menu wofi
 
@@ -19,7 +19,6 @@ hide_edge_borders smart
 default_border pixel 3
 default_floating_border pixel 3
 
-# output eDP-1 bg ~/Pictures/wallpaper1.png fill
 output eDP-1 bg #282A36 solid_color
 
 output eDP-1 {
@@ -64,7 +63,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # Exit
-bindsym $mod+Shift+q exec 'swaymsg exit'
+bindsym $mod+m exec 'swaymsg exit'
 
 # Resizing
 mode "resize" {
@@ -160,7 +159,6 @@ client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
 client.background       #F8F8F2
 
 # bar {
@@ -178,6 +176,8 @@ client.background       #F8F8F2
 #         binding_mode       #FF5555 #FF5555 #F8F8F2
 #     }
 # }
+
+exec foot --server
 
 exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK

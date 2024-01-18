@@ -27,7 +27,7 @@ output eDP-1 {
     max_render_time off
     render_bit_depth 10
     mode 2880x1800@120Hz
-    bg #282a36 solid_color
+    bg #282828 solid_color
 }
 
 input "type:keyboard" {
@@ -157,26 +157,26 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move righ
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-client.background       #F8F8F2
+client.focused          #928374 #928374 #EBDBB2 #928374   #928374
+client.focused_inactive #EBDBB2 #EBDBB2 #EBDBB2 #EBDBB2   #EBDBB2
+client.unfocused        #282828 #282828 #EBDBB2 #282828   #282828
+client.urgent           #EBDBB2 #CC241d #EBDBB2 #CC241D   #CC241D
+client.placeholder      #282828 #282828 #EBDBB2 #282828   #282828
+client.background       #EBDBB2
 
 # bar {
 #     position top
 #     status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
 #     colors {
-#         background #282A36
-#         statusline #F8F8F2
+#         background #282828
+#         statusline #EBDBB2
 #         separator  #44475A
 # 
-#         focused_workspace  #44475A #44475A #F8F8F2
-#         active_workspace   #282A36 #44475A #F8F8F2
-#         inactive_workspace #282A36 #282A36 #BFBFBF
-#         urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#         binding_mode       #FF5555 #FF5555 #F8F8F2
+#         focused_workspace  #44475A #44475A #EBDBB2
+#         active_workspace   #282828 #44475A #EBDBB2
+#         inactive_workspace #282828 #282828 #BFBFBF
+#         urgent_workspace   #FF5555 #FF5555 #EBDBB2
+#         binding_mode       #FF5555 #FF5555 #EBDBB2
 #     }
 # }
 

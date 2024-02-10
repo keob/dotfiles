@@ -4,15 +4,6 @@
 	safecrlf = true
 	autocrlf = input
 	ignoreCase = false
-[pull]
-	rebase = false
-[push]
-	default = simple
-	followTags = true
-[fetch]
-	prune = true
-[diff]
-	algorithm = patience
 [http]
 	postBuffer = 524288000
 [filter "lfs"]

@@ -1,9 +1,7 @@
 term=foot
 show=drun
-width=500
-height=600
-xoffset=710
-yoffset=200
+width=400
+height=500
 layer=overlay
 show_all=true
 insensitive=true

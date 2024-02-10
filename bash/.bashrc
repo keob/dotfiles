@@ -18,9 +18,6 @@ shopt -s lithist
 shopt -s dotglob
 shopt -s histappend
 
-# Direnv
-# eval "$(direnv hook bash)"
-
 # EDITOR
 export EDITOR=nvim
 

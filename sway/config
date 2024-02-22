@@ -40,7 +40,7 @@ input "type:touchpad" {
     tap enabled
     dwt enabled
     pointer_accel 0.6
-    accel_profile adaptive
+    accel_profile flat
     natural_scroll enabled
 }
 
@@ -69,6 +69,8 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+m exec 'swaymsg exit'
 
 # Resizing
+bindsym $mod+r mode "resize"
+
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -83,15 +85,14 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
 
 # split
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
@@ -171,7 +172,7 @@ client.background       #F8F8F2
 #         background #282A36
 #         statusline #F8F8F2
 #         separator  #44475A
-# 
+#
 #         focused_workspace  #44475A #44475A #F8F8F2
 #         active_workspace   #282A36 #44475A #F8F8F2
 #         inactive_workspace #282A36 #282A36 #BFBFBF
@@ -180,5 +181,17 @@ client.background       #F8F8F2
 #     }
 # }
 
-exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
+# exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
+
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY

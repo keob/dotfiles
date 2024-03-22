@@ -1,0 +1,464 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+        }
+
+        repeat-rate 30
+        repeat-delay 300
+
+        track-layout "global"
+    }
+
+    touchpad {
+        tap
+        dwt
+        // dwtp
+        natural-scroll
+        accel-speed 0.4
+        accel-profile "flat"
+        tap-button-map "left-right-middle"
+        click-method "clickfinger"
+    }
+
+    mouse {
+        // natural-scroll
+        accel-speed 0.2
+        accel-profile "flat"
+    }
+
+    trackpoint {
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+    }
+
+    tablet {
+        // Set the name of the output (see below) which the tablet will map to.
+        // If this is unset or the output doesn't exist, the tablet maps to one of the
+        // existing outputs.
+        map-to-output "eDP-1"
+    }
+
+    touch {
+        // Set the name of the output (see below) which touch input will map to.
+        // If this is unset or the output doesn't exist, touch input maps to one of the
+        // existing outputs.
+        map-to-output "eDP-1"
+    }
+
+    // disable-power-key-handling
+
+    // Uncomment this to make the mouse warp to the center of newly focused windows.
+    // warp-mouse-to-focus
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    // focus-follows-mouse
+
+    // Uncomment this to enable workspace auto-back-and-forth.
+    // If enabled, switching to the same workspace by index twice will switch back to the
+    // previous workspace.
+    workspace-auto-back-and-forth
+}
+
+output "eDP-1" {
+    scale 2.0
+    transform "normal"
+    mode "2880x1800@120"
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // It the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    // position x=1440 y=900
+}
+
+layout {
+    focus-ring {
+        off
+
+        width 3
+
+        // active-color "#6272A4"
+
+        // inactive-color "#44475A"
+
+        // Additionally, there's a legacy RGBA syntax:
+        active-color 203 166 247 150
+        inactive-color 88 91 112 150
+
+        // You can also use gradients. They take precedence over solid colors.
+        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
+        // The angle is the same as in linear-gradient, and is optional,
+        // defaulting to 180 (top-to-bottom gradient).
+        // You can use any CSS linear-gradient tool on the web to set these up.
+        //
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+
+        // You can also color the gradient relative to the entire view
+        // of the workspace, rather than relative to just the window itself.
+        // To do that, set relative-to="workspace-view".
+        //
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    border {
+        // off
+        width 3
+        // active-color "#6272A4"
+        // inactive-color "#44475A"
+
+        active-color 203 166 247 150
+        inactive-color 88 91 112 150
+
+        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+
+    // You can change the default width of the new windows.
+    default-column-width { proportion 0.5; }
+
+    gaps 3
+
+    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
+    // You can think of them as a kind of outer gaps. They are set in logical pixels.
+    // Left and right struts will cause the next window to the side to always be visible.
+    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
+    // layer-shell panels and regular gaps.
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    // - "always", the focused column will always be centered.
+    center-focused-column "never"
+}
+
+spawn-at-startup "foot" "-s"
+spawn-at-startup "swaybg" "-i" "/home/kebo/Pictures/wall2.jpg"
+
+environment {
+    // QT_QPA_PLATFORM "wayland"
+
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+}
+
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+}
+
+prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// You can also set this to null to disable saving screenshots to disk.
+// screenshot-path null
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+animations {
+    slowdown 3.0
+
+    // Easing has the following settings:
+    // - duration-ms sets the duration of the animation in milliseconds.
+    // - curve sets the easing curve. Currently, available curves
+    //   are "ease-out-cubic" and "ease-out-expo".
+    //
+    // Spring animations work better with touchpad gestures, because they
+    // take into account the velocity of your fingers as you release the swipe.
+    // The parameters are less obvious and generally should be tuned
+    // with trial and error. Notably, you cannot directly set the duration.
+    // You can use this app to help visualize how the spring parameters
+    // change the animation: https://flathub.org/apps/app.drey.Elastic
+    //
+    // A spring animation is configured like this:
+    // - spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    //
+    // The damping ratio goes from 0.1 to 10.0 and has the following properties:
+    // - below 1.0: underdamped spring, will oscillate in the end.
+    // - above 1.0: overdamped spring, won't oscillate.
+    // - 1.0: critically damped spring, comes to rest in minimum possible time
+    //        without oscillations.
+    //
+    // However, even with damping ratio = 1.0 the spring animation may oscillate
+    // if "launched" with enough velocity from a touchpad swipe.
+    //
+    // Lower stiffness will result in a slower animation more prone to oscillation.
+    //
+    // Set epsilon to a lower value if the animation "jumps" in the end.
+    //
+    // The spring mass is hardcoded to 1.0 and cannot be changed. Instead, change
+    // stiffness proportionally. E.g. increasing mass by 2x is the same as
+    // decreasing stiffness by 2x.
+
+    // Animation when switching workspaces up and down,
+    // including after the touchpad gesture.
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+
+    // All horizontal camera view movement:
+    // - When a window off-screen is focused and the camera scrolls to it.
+    // - When a new window appears off-screen and the camera scrolls to it.
+    // - When a window resizes bigger and the camera scrolls to show it in full.
+    // - And so on.
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    // Window opening animation. Note that this one has different defaults.
+    window-open {
+        // off
+        // duration-ms 150
+        // curve "ease-out-cubic"
+
+        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+    }
+
+    // Config parse error and new default config creation notification
+    // open/close animation.
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
+}
+
+window-rule {
+    match app-id="foot"
+    open-maximized true
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Return { spawn "footclient"; }
+    Mod+P { spawn "fuzzel"; }
+    // Super+Alt+L { spawn "swaylock"; }
+
+    // Example volume keys mappings for PipeWire & WirePlumber.
+    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+
+    Mod+Q { close-window; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Down  { move-window-down; }
+    Mod+Ctrl+Up    { move-window-up; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down; }
+    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
+
+    // Alternative commands that move across workspaces when reaching
+    // the first or last window in a column.
+    // Mod+J     { focus-window-or-workspace-down; }
+    // Mod+K     { focus-window-or-workspace-up; }
+    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
+    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    Mod+Shift+Left  { focus-monitor-left; }
+    Mod+Shift+Down  { focus-monitor-down; }
+    Mod+Shift+Up    { focus-monitor-up; }
+    Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+H     { focus-monitor-left; }
+    Mod+Shift+J     { focus-monitor-down; }
+    Mod+Shift+K     { focus-monitor-up; }
+    Mod+Shift+L     { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    // Alternatively, there are commands to move just a single window:
+    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
+    // ...
+
+    // And you can also move a whole workspace to another monitor:
+    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    // ...
+
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+U              { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+U         { move-column-to-workspace-down; }
+    Mod+Ctrl+I         { move-column-to-workspace-up; }
+
+    // Alternatively, there are commands to move just a single window:
+    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
+    // ...
+
+    Mod+Shift+Page_Down { move-workspace-down; }
+    Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+U         { move-workspace-down; }
+    Mod+Shift+I         { move-workspace-up; }
+
+    // You can refer to workspaces by index. However, keep in mind that
+    // niri is a dynamic workspace system, so these commands are kind of
+    // "best effort". Trying to refer to a workspace index bigger than
+    // the current workspace count will instead refer to the bottommost
+    // (empty) workspace.
+    //
+    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
+    // will all refer to the 3rd workspace.
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    // Alternatively, there are commands to move just a single window:
+    // Mod+Ctrl+1 { move-window-to-workspace 1; }
+
+    // Switches focus between the current and the previous workspace.
+    // Mod+Tab { focus-workspace-previous; }
+
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // There are also commands that consume or expel a single window to the side.
+    // Mod+BracketLeft  { consume-or-expel-window-left; }
+    // Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+C { center-column; }
+
+    // Finer width adjustments.
+    // This command can also:
+    // * set width in pixels: "1000"
+    // * adjust width in pixels: "-5" or "+5"
+    // * set width as a percentage of screen width: "25%"
+    // * adjust width as a percentage of screen width: "-10%" or "+10%"
+    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
+    // set-column-width "100" will make the column occupy 200 physical screen pixels.
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Finer height adjustments when in column with other windows.
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // Actions to switch layouts.
+    // Note: if you uncomment these, make sure you do NOT have
+    // a matching layout switch hotkey configured in xkb options above.
+    // Having both at once on the same hotkey will break the switching,
+    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
+    // Mod+Space       { switch-layout "next"; }
+    // Mod+Shift+Space { switch-layout "prev"; }
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // The quit action will show a confirmation dialog to avoid accidental exits.
+    // If you want to skip the confirmation dialog, set the flag like so:
+    // Mod+Shift+E { quit skip-confirmation=true; }
+    Mod+Shift+E { quit; }
+
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+    Mod+Shift+P { power-off-monitors; }
+
+    // This debug bind will tint all surfaces green, unless they are being
+    // directly scanned out. It's therefore useful to check if direct scanout
+    // is working.
+    // Mod+Shift+Ctrl+T { toggle-debug-tint; }
+}
+
+// Settings for debugging. Not meant for normal use.
+// These can change or stop working at any point with little notice.
+debug {
+    // Make niri take over its DBus services even if it's not running as a session.
+    // Useful for testing screen recording changes without having to relogin.
+    // The main niri instance will *not* currently take back the services; so you will
+    // need to relogin in the end.
+    // dbus-interfaces-in-non-session-instances
+
+    // Wait until every frame is done rendering before handing it over to DRM.
+    // wait-for-frame-completion-before-queueing
+
+    // Enable direct scanout into overlay planes.
+    // May cause frame drops during some animations on some hardware.
+    // enable-overlay-planes
+
+    // Disable the use of the cursor plane.
+    // The cursor will be rendered together with the rest of the frame.
+    // disable-cursor-plane
+
+    // Override the DRM device that niri will use for all rendering.
+    // render-drm-device "/dev/dri/renderD129"
+
+    // Enable the color-transformations capability of the Smithay renderer.
+    // May cause a slight decrease in rendering performance.
+    // enable-color-transformations-capability
+
+    // Emulate zero (unknown) presentation time returned from DRM.
+    // This is a thing on NVIDIA proprietary drivers, so this flag can be
+    // used to test that we don't break too hard on those systems.
+    // emulate-zero-presentation-time
+}

@@ -18,6 +18,9 @@ shopt -s lithist
 shopt -s dotglob
 shopt -s histappend
 
+eval "$(zoxide init bash)"
+eval "$(direnv hook bash)"
+
 # EDITOR
 export EDITOR=nvim
 

@@ -38,14 +38,14 @@ input {
         // Set the name of the output (see below) which the tablet will map to.
         // If this is unset or the output doesn't exist, the tablet maps to one of the
         // existing outputs.
-        map-to-output "eDP-1"
+        // map-to-output "eDP-1"
     }
 
     touch {
         // Set the name of the output (see below) which touch input will map to.
         // If this is unset or the output doesn't exist, touch input maps to one of the
         // existing outputs.
-        map-to-output "eDP-1"
+        // map-to-output "eDP-1"
     }
 
     // disable-power-key-handling
@@ -66,16 +66,7 @@ output "eDP-1" {
     scale 2.0
     transform "normal"
     mode "2880x1800@120"
-
-    // Position of the output in the global coordinate space.
-    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-    // The cursor can only move between directly adjacent outputs.
-    // Output scale has to be taken into account for positioning:
-    // outputs are sized in logical, or scaled, pixels.
-    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-    // so to put another output directly adjacent to it on the right, set its x to 1920.
-    // It the position is unset or results in an overlap, the output is instead placed
-    // automatically.
+    variable-refresh-rate
     // position x=1440 y=900
 }
 
@@ -85,13 +76,12 @@ layout {
 
         width 3
 
-        // active-color "#6272A4"
-
-        // inactive-color "#44475A"
+        active-color "#6272A4"
+        inactive-color "#44475A"
 
         // Additionally, there's a legacy RGBA syntax:
-        active-color 203 166 247 150
-        inactive-color 88 91 112 150
+        // active-color 203 166 247 150
+        // inactive-color 88 91 112 150
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -111,11 +101,11 @@ layout {
     border {
         // off
         width 3
-        // active-color "#6272A4"
-        // inactive-color "#44475A"
+        active-color "#6272A4"
+        inactive-color "#44475A"
 
-        active-color 203 166 247 150
-        inactive-color 88 91 112 150
+        // active-color 203 166 247 150
+        // inactive-color 88 91 112 150
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
@@ -156,8 +146,8 @@ layout {
     center-focused-column "never"
 }
 
-spawn-at-startup "foot" "-s"
-spawn-at-startup "swaybg" "-i" "/home/kebo/Pictures/wall2.jpg"
+// spawn-at-startup "foot" "-s"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/kebo/Pictures/arch.png"
 
 environment {
     // QT_QPA_PLATFORM "wayland"
@@ -167,7 +157,7 @@ environment {
 }
 
 cursor {
-    xcursor-theme "default"
+    xcursor-theme "Adwaita"
     xcursor-size 24
 }
 

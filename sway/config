@@ -23,10 +23,9 @@ output eDP-1 {
     scale 2
     subpixel rgb
     res 2880x1800
-    adaptive_sync off
+    adaptive_sync on
     max_render_time off
     render_bit_depth 10
-    mode 2880x1800@120Hz
     bg #282a36 solid_color
 }
 
@@ -54,7 +53,7 @@ input "type:pointer" {
 
 seat * {
     hide_cursor when-typing enable
-    xcursor_theme default 24
+    xcursor_theme Adwaita 24
 }
 
 # Start a terminal

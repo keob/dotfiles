@@ -4,9 +4,11 @@ theme = "dracula"
 idle-timeout = 0
 true-color = true
 color-modes	= true
-auto-completion = true
+popup-border = all
 bufferline = "multiple"
 line-number = "relative"
+auto-completion = true
+completion-timeout = 100
 completion-trigger-len = 1
 
 [editor.statusline]

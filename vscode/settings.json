@@ -43,6 +43,7 @@
         "**/bower_components": true,
         "**/*.code-search": true
     },
+    "search.followSymlinks": false,
     "files.eol": "\n",
     "files.enableTrash": false,
     "files.trimTrailingWhitespace": true,
@@ -56,8 +57,10 @@
         "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
         "go.mod": "go.sum"
     },
-    "breadcrumbs.enabled": false,
-    "editor.suggest.preview": true,
+    "breadcrumbs.icons": true,
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "last",
+    "editor.suggest.preview": false,
     "editor.suggest.shareSuggestSelections": true,
     "editor.suggest.showStatusBar": true,
     "files.simpleDialog.enable": true,
@@ -67,14 +70,15 @@
     "workbench.sideBar.location": "left",
     "workbench.editor.enablePreview": true,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Default Dark+",
-    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.tree.renderIndentGuides": "none",
     "debug.console.fontSize": 16,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.fontSize": 16,
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
     "window.zoomLevel": 0,
+    "window.menuBarVisibility": "classic",
     "extensions.ignoreRecommendations": true,
     "update.mode": "manual",
     "telemetry.telemetryLevel": "off",
@@ -86,11 +90,8 @@
         "razor": "html",
         "plaintext": "pug"
     },
-    "go.alternateTools": {
-        "go": "go",
-        "dlv": "dlv",
-        "gopls": "gopls"
-    },
+    "go.lintOnSave": "off",
+    "go.lintTool": "revive",
     "gopls": {
         "ui.diagnostic.analyses": {
             "useany": true,
@@ -100,7 +101,7 @@
             "unusedvariable": true,
         },
         "ui.semanticTokens": true,
-        "ui.diagnostic.staticcheck": true,
+        "ui.diagnostic.staticcheck": false,
         "ui.completion.usePlaceholders": true,
         "ui.documentation.linksInHover": false,
     },

@@ -1,33 +1,34 @@
 set $mod Mod4
 
-set $left h
-set $down j
 set $up k
+set $down j
+set $left h
 set $right l
 
 set $term foot
-set $menu wofi
+set $menu fuzzel
 
 font pango:monospace 12
 
-# gaps inner 3
-# gaps outer 3
-# smart_gaps on
+#gaps inner 3
+#gaps outer 3
+#smart_gaps on
 focus_follows_mouse no
-hide_edge_borders smart
+# hide_edge_borders smart
 default_border pixel 3
 default_floating_border pixel 3
+
+output * bg /home/kebo/Pictures/arch.png fill
 
 output eDP-1 {
     pos 0 0
     scale 2
     subpixel rgb
     res 2880x1800
-    adaptive_sync off
+    mode 2880x1800
+    adaptive_sync on
     max_render_time off
     render_bit_depth 10
-    mode 2880x1800@120Hz
-    bg #282828 solid_color
 }
 
 input "type:keyboard" {
@@ -39,25 +40,32 @@ input "type:keyboard" {
 input "type:touchpad" {
     tap enabled
     dwt enabled
-    pointer_accel 0.6
-    accel_profile adaptive
+    pointer_accel 0.4
+    accel_profile flat
+    tap_button_map lrm
     natural_scroll enabled
+    click_method clickfinger
 }
 
 input "type:pointer" {
-    pointer_accel 0.6
-    accel_profile adaptive
+    pointer_accel 0.2
+    accel_profile flat
     natural_scroll disabled
 }
 
-# Start a terminal
-bindsym $mod+Return exec $term
+seat * {
+    xcursor_theme Adwaita 24
+    hide_cursor when-typing enable
+}
 
 # Kill focused window
 bindsym $mod+q kill
 
 # Start your launcher
 bindsym $mod+p exec $menu
+
+# Start a terminal
+bindsym $mod+Return exec $term
 
 # Drag floating windows
 floating_modifier $mod normal
@@ -69,6 +77,8 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+m exec 'swaymsg exit'
 
 # Resizing
+bindsym $mod+r mode "resize"
+
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -83,15 +93,14 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
 
 # split
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
@@ -134,27 +143,28 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Move your focus around
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
 bindsym $mod+$up focus up
+bindsym $mod+$down focus down
+bindsym $mod+$left focus left
 bindsym $mod+$right focus right
 
 # Or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
 bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
 bindsym $mod+Right focus right
 
 # Move the focused window with the same, but add Shift
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$right move right
+
 # Ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move righ
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
 
 # class                 border  bground text    indicator child_border
 client.focused          #928374 #928374 #EBDBB2 #928374   #928374
@@ -180,5 +190,17 @@ client.background       #EBDBB2
 #     }
 # }
 
-exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
+# exec systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
+
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY

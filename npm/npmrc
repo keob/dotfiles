@@ -1,11 +1,10 @@
 init-license=MIT
-init-author-email=kebo2021@qq.com
 init-author-name=kebo
+init-author-email=kebo2021@qq.com
 prefix=~/.npm
 cache=~/.npm/cache
 registry=https://registry.npmmirror.com/
-electron_mirror=https://npmmirror.com/mirrors/electron
-phantomjs_cdnurl=http://npmmirror.com/mirrors/phantomjs
-sass_binary_site=https://npmmirror.com/mirrors/node-sass
-operadriver_cdnurl=https://npmmirror.com/mirrors/operadriver
-chromedriver_cdnurl=https://npmmirror.com/mirrors/chromedriver
+electron_mirror=https://registry.npmmirror.com/electron
+sass_binary_site=https://registry.npmmirror.com/node-sass
+operadriver_cdnurl=https://registry.npmmirror.com/operadriver
+chromedriver_cdnurl=https://registry.npmmirror.com/chromedriver

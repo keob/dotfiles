@@ -14,12 +14,12 @@ input {
     touchpad {
         tap
         dwt
-        // dwtp
+        dwtp
         natural-scroll
         accel-speed 0.4
         accel-profile "flat"
-        tap-button-map "left-right-middle"
         click-method "clickfinger"
+        tap-button-map "left-right-middle"
     }
 
     mouse {
@@ -150,15 +150,15 @@ layout {
 spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/kebo/Pictures/arch.png"
 
 environment {
-    // QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORM "wayland"
 
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
 }
 
 cursor {
-    xcursor-theme "Adwaita"
     xcursor-size 24
+    xcursor-theme "Adwaita"
 }
 
 prefer-no-csd
@@ -242,6 +242,11 @@ animations {
 }
 
 window-rule {
+    clip-to-geometry true
+    geometry-corner-radius 5
+}
+
+window-rule {
     match app-id="foot"
     open-maximized true
 }
@@ -249,8 +254,8 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "footclient"; }
     Mod+P { spawn "fuzzel"; }
+    Mod+Return { spawn "foot"; }
     // Super+Alt+L { spawn "swaylock"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -407,8 +412,8 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     // If you want to skip the confirmation dialog, set the flag like so:
-    // Mod+Shift+E { quit skip-confirmation=true; }
-    Mod+Shift+E { quit; }
+    Mod+Shift+E { quit skip-confirmation=true; }
+    // Mod+Shift+E { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.

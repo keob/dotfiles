@@ -1,20 +1,20 @@
-theme = "dracula"
+theme = "nord"
 
 [editor]
 idle-timeout = 0
 true-color = true
 color-modes	= true
-popup-border = all
+popup-border = "none"
 bufferline = "multiple"
 line-number = "relative"
 auto-completion = true
-completion-timeout = 100
+# completion-timeout = 100
 completion-trigger-len = 1
 
 [editor.statusline]
 left = ["mode", "file-name"]
-center = ["spinner"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+center = []
+right = ["spinner", "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 mode.normal = "N"
 mode.insert = "I"
 mode.select = "S"

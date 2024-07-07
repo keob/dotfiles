@@ -5,5 +5,5 @@ Name=wl*
 DHCP=yes
 DNS=119.29.29.29
 DNS=2400:3200::1
-MulticastDNS=yes
+MulticastDNS=no
 IPv6PrivacyExtensions=yes
